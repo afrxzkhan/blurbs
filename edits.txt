@@ -19,3 +19,42 @@ we are first doing a sample only and then we will decide to scale it for everyth
 also thinking of redesining the annotations and  wanted to add some new signature designs and current signature looks like this "╰🐾────────────────────🐾╯" and also follow the current line spacing that intentional but there are some outcasters in it . so please fix that also. 
 
 You are an expert webdesigner and expert in ui/ux. your mate html will be used by 100s of employees for 8 hours a day atleast. and you should follow a theme which is not hard on our eyes and easily headable. your task to make and redesing the html file  
+
+after the AI's first output asking more edits
+
+Flex Tier 1
+╭af────────────────────af╮
+
+Read the Email , subject, attachment, MU transcript: Yes
+Did you understand the DP issue (if no, check prev contacts then more info): Yes
+DP Status: Active
+
+DP Issue: DCR appeal
+
+Check past 7 days contact (4 or more related contacts, follow When to Escalate ): Yes
+Any SYSKA/noteworthy on account: No
+Did DP mention Block details (If No Check Past Contact): Yes
+Any related open SIMs (if yes, then add correspondence): No
+
+SIM link - 
+
+Is the exemption required from MERIT Tab (AO form for Station Issue): Yes
+Does it include Payment query (Transfer to Payment): No
+Missed block due to app issue (transfer to payment only after exemption): No
+Multiple issues, are all resolved? No
+DNR follow up created? No
+
+Resolution Provided: DCR LSPE/LHE Rejected
+
+╰af────────────────────af╯
+
+
+1. I don't want to have them custom signature as I made it and it took me a lot of time to do it . and my name is afroz khan so above sample looks identical to my initials.  but it should not be too forcing that other associates start to dislike me. 
+2. I want to completely remove the dataset: clean and comprehensive. and just keep the clean formatting only
+3. and I want to add the links for my contacts like chime me, whatspp me, my internal profile, email me
+4. remove the studio and fixes. 
+5. remove default for "send standings" section
+6. add more to live auto fill:   --make this section bigger so that its easy to typo and preview should be clear
+7. add a 1-click for the date in live auto fill as an option and the standard format for date is October 20, 2026
+8. also add option to add extra resolution notes ex: Resolution Provided: Station Issue - (the extra option text should go here)
+9. the attached photo section looks to clutter. add some spacing etc.
