@@ -1,0 +1,21 @@
+Make 1 HTML for annotations which includes 1. active delivery partners 2. inactive delivery partners 3. Inactive delivery partners 4. Offboarded delivery partners
+
+about the files. 
+we have 5 sheets
+1. Active_Annotations which we are currently using for active delivery partners
+2. Onboarding _and_ Inactive currently using for onboarding and inactive delivery partners
+3. Offboarded for offboarded delivery partners
+4. Active_Annotations_old from here I made some changes and reduced the data for cleaner look. this is much more comprehensive
+5. initial_annotations is the first draft that I was using but then I added Blurbs and made the other 4
+
+
+Notes to AI
+Make one HTML for the 4 status delivery partners
+the look should be clean and should be easily readable in both dark mode and light mode
+this will be used in 24 inch Monitor of think center which uses chrome os 
+want to implement click to copy the cell 
+want to fit all of it in just one page. using full hd monitor of 24 inch of thinkcentre
+we are first doing a sample only and then we will decide to scale it for everything is perfect. 
+also thinking of redesining the annotations and  wanted to add some new signature designs and current signature looks like this "╰🐾────────────────────🐾╯" and also follow the current line spacing that intentional but there are some outcasters in it . so please fix that also. 
+
+You are an expert webdesigner and expert in ui/ux. your mate html will be used by 100s of employees for 8 hours a day atleast. and you should follow a theme which is not hard on our eyes and easily headable. your task to make and redesing the html file  
