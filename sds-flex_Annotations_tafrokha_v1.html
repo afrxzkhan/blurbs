@@ -409,6 +409,7 @@
               <button type="button" id="copyDateOnlyBtn" class="px-1.5 py-0.2 rounded text-[9.5px] font-semibold bg-blue-500/20 hover:bg-blue-500/35 text-blue-700 dark:text-blue-300 border border-blue-500/30 transition-all" title="Copy formatted date">📋 Copy Date</button>
             </div>
           </div>
+        <!-- 2.1 Date Picker -->
           <div class="flex items-center gap-1">
             <input
               type="text"
@@ -416,12 +417,22 @@
               placeholder="October 20, 2026"
               class="autofill-input flex-1 px-2.5 py-1 text-xs rounded-md font-mono"
             />
-            <input
-              type="date"
-              id="nativeDatePicker"
-              class="autofill-input px-1.5 py-0.5 text-xs rounded-md font-mono cursor-pointer w-[34px]"
-              title="Pick date from calendar"
-            />
+
+            <div class="relative flex items-center justify-center">
+              <input
+                type="date"
+                id="nativeDatePicker"
+                class="autofill-input absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
+                title="Pick date from calendar"
+              />
+              <button
+                type="button"
+                class="autofill-input px-1.5 py-0.5 text-sm rounded-md cursor-pointer"
+                title="Pick date from calendar"
+                aria-label="Pick date from calendar"
+                onclick="document.getElementById('nativeDatePicker').showPicker()"
+              >📅</button>
+            </div>
           </div>
         </div>
 
