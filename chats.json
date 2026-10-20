@@ -1,0 +1,870 @@
+{
+    "Chats": [
+        {
+            "Here is the update excel sheet. use this. Click here": "Type",
+            "Unnamed: 1": "Particular",
+            "Unnamed: 2": "Script",
+            "Unnamed: 3": "Type",
+            "Unnamed: 4": "Particular",
+            "Unnamed: 5": "Script"
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "Greetings",
+            "Unnamed: 1": "Sameera",
+            "Unnamed: 2": "Thank you for contacting Amazon Flex Support. My name is Sameera. I will be assisting you today.",
+            "Unnamed: 3": "Idle",
+            "Unnamed: 4": "2 min idle 1st msg",
+            "Unnamed: 5": "I don't mean to rush you, but we've been idle for 2 minutes. I want to make sure our chat's still connected. If you aren't able to respond in 2 minutes, this chat will close."
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "Sana",
+            "Unnamed: 2": "Thank you for contacting Amazon Flex Support. My name is Sana and I will be assisting you today.",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "2 min idle Last  msg",
+            "Unnamed: 5": "This chat has been idle for two minutes. I may close this chat after two more minutes. If it isn't convenient for you to reply to me at the moment, please contact us again later."
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "Afroz",
+            "Unnamed: 2": "Thank you for contacting Amazon Flex Support. My name is Afroz. I will be assisting you today.",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "Closing",
+            "Unnamed: 5": "I'm afraid I can't see your messages in the chat box. Thank you for contacting us. Feel free to come back at any time."
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "",
+            "Unnamed: 2": "Thank you for contacting Amazon Flex Support. My name is Saniya. I will be assisting you today.",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "",
+            "Unnamed: 5": ""
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "More Info",
+            "Unnamed: 1": "Paraphrasing",
+            "Unnamed: 2": "If my understanding is correct, you're looking for a way to [do this]?",
+            "Unnamed: 3": "Parked chats",
+            "Unnamed: 4": "",
+            "Unnamed: 5": "Please allow me a moment to review your previous conversation to ensure continuity in support."
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "more info",
+            "Unnamed: 2": "I wasn't able to determine the issue from the information provided. To assist us in investigating, could you please provide more details about the issue?",
+            "Unnamed: 3": "Apology",
+            "Unnamed: 4": "",
+            "Unnamed: 5": "Thank you for bringing this to my attention. I'm so sorry this issue is impacting your standings. Let me go ahead and check this one for you"
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "date and time",
+            "Unnamed: 2": "To assist me in investigating, could you please provide me with the date and time of the block the issue occurred?",
+            "Unnamed: 3": "Region Change",
+            "Unnamed: 4": "Level 2",
+            "Unnamed: 5": "If your Rewards Tier status is Level 2 or higher, you can transfer to a new region once every 7 days. It applies if there are available opportunities within the region. To check if there are available opportunities in your desired region, navigate to Settings in the Amazon Flex app: Personal Information > Region > Request region change > Enter your preferred Zip Code > Continue.\n"
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "date and time 2",
+            "Unnamed: 2": "I need these information to help you. please reply with specific information for each block or issue you are contacting about.\n\nBlock date: \nBlock time: \nThe issue you encountered:",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "Close Account",
+            "Unnamed: 5": "If you still wish to change your region, we have to close your existing account so you can create a new account with a different email address in the region of your choice."
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "",
+            "Unnamed: 2": "",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "",
+            "Unnamed: 5": "May I proceed to send you the Email request to close your account?"
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "Wait!",
+            "Unnamed: 1": "Verify",
+            "Unnamed: 2": "Thank you for the information, allow me a moment while I verify this information on my end.",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "Close Account 2",
+            "Unnamed: 5": "If you wish to create a new account to sign up in the new region, may I proceed to send you the Email request to close your account?"
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "2 mins",
+            "Unnamed: 2": "please allow me 2 minutes to investigate the issue",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "Thanks",
+            "Unnamed: 5": "Thanks for confirming. Please note, if the area requested isn’t recruiting, you may join the interest list. You will receive an email confirmation from us once your account has been closed"
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "2 mins",
+            "Unnamed: 2": "Could you please stay connected for two minutes while I research this for you?",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "are you referring to this ",
+            "Unnamed: 5": "I ́m sorry, I dont understand spanish, please contact us via flex app through phone call so we can transfer you to our spanish department."
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "",
+            "Unnamed: 2": "",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "",
+            "Unnamed: 5": ""
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "End!",
+            "Unnamed: 1": "anyting else",
+            "Unnamed: 2": "Is there anything else I may assist you with today?",
+            "Unnamed: 3": "Offers",
+            "Unnamed: 4": "Account info ",
+            "Unnamed: 5": "Your Account is active and Your Standings is "
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "end",
+            "Unnamed: 2": "Thank you for contacting Amazon Flex. have a good day! I wish you have a great smile through out the day.",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "Extra",
+            "Unnamed: 5": "after further investigation I found that there are not many offers in your area"
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "Rude",
+            "Unnamed: 2": "I have already provided you with all the information",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "Offers 1 ",
+            "Unnamed: 5": "Offer availability is dependent on customer demand, may fluctuate week to week, and isn’t guaranteed. If you would like to work more blocks, we encourage you to check the Amazon Flex app often. Offers become available throughout the day and can be found on the Offers page. You may need to select the Refresh button on the Offers page periodically to make sure you see the latest available offers."
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "Stop",
+            "Unnamed: 2": "no further actions are needed from your end",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "Offers 2",
+            "Unnamed: 5": "The amount of work available to all Amazon Flex delivery partners depends on customer demand and changes week to week. You can see available work by going to the \"Offers\" page in the Amazon Flex app. When you’re on the page, select 'Refresh' to see the latest offers."
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "Thanks",
+            "Unnamed: 2": "Thank you again for contacting us and contributing to the success of Amazon Flex.",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "Offers 3",
+            "Unnamed: 5": "Each delivery partner sees different offers. The offers you see may depend on the following:\n\n\nThe amount of work you've done recently\nThe work you've reserved in the future\nWhether you've cancelled lots of work\nYour Delivery Quality, and your Reliability."
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "no further help",
+            "Unnamed: 2": "Since, there is no other help required. Please allow me to end this chat. It was a pleasure assisting you with this, Thanks for contacting Amazon.",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "Repeat/Feedback",
+            "Unnamed: 5": "We appreciate that you took time to write to us. The offers that are available to you at any given time are based on factors such as: Customer demand, your scheduled hours, your delivery history, and whether your vehicle qualifies for the available routes.\n\nGiven these factors, not all offers will be visible to all delivery partners at the same time."
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "ask Feedback",
+            "Unnamed: 2": "It was a pleasure assisting you. Thanks for being part of this feature. You’ll receive a survey from Amazon shortly and would love to hear your feedback on this feature! Looking forward to support you in the future!",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "",
+            "Unnamed: 5": "We add offers every day and at multiple times during the day. If you don't see any offers at the moment, check back in a few hours."
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "Apology",
+            "Unnamed: 2": "I'm sorry to hear that you are experiencing issues with the Amazon Flex",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "",
+            "Unnamed: 5": "Regarding your payment, I need to transfer you to our payments team. May I go ahead with the transfer?"
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "",
+            "Unnamed: 2": "",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "",
+            "Unnamed: 5": ""
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "Actions",
+            "Unnamed: 1": "submit Form",
+            "Unnamed: 2": "I'll need to submit a form to the right team to help you out. Would you mind waiting a couple of minutes while I explain the situation?",
+            "Unnamed: 3": "Cancel Block",
+            "Unnamed: 4": "Guide Lines",
+            "Unnamed: 5": "If you need to cancel a delivery block, please follow the timing guidelines below based on your block type:\n\n1. AMZL and SSD scheduled-ahead blocks. You must forfeit the block at least 45 minutes before the start time in the app. Otherwise, it will be considered a missed block.\n2. Amazon Now Instant Offers: Forfeit in the app at least 90 seconds before the block start time."
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "Raised Low sev TT",
+            "Unnamed: 2": "I've passed your information along to the appropriate team and they are investigating the issue. We'll let you know when we have more information.",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "How to",
+            "Unnamed: 5": "If you need to cancel an AMZL or SSD block within 45 minutes of its start time, you'll have a 5-minute grace period to forfeit without penalty. This forfeiture won't count as a missed delivery block.\n\nTo forfeit an accepted block:\n\n1. In the Amazon Flex app, select the Menu icon and then select Calendar.\n\n2. Select a day to view additional details, and then select the block you want to forfeit.\n\n3. Select Forfeit This Time and then swipe to confirm.\n\nFor more information on scheduling delivery blocks and preferred scheduling, refer to https://flex.amazon.com/faq."
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "Grant LHE",
+            "Unnamed: 2": "Sorry to hear about the situation. I understand things happen from time to time that may impact your blocks.\n\nI also understand that it was an extenuating circumstance beyond your control. As a result, I'll make an exception and remove it from your delivery history this time.\n\nI am not able to do it every time, but I know you have goals and I want to help you get there.",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "Blurb",
+            "Unnamed: 5": "Hello,\n\nIf you need to cancel a delivery block, please follow the timing guidelines below based on your block type:\n\n1. AMZL and SSD scheduled-ahead blocks. You must forfeit the block at least 45 minutes before the start time in the app. Otherwise, it will be considered a missed block.\n2. Amazon Now Instant Offers: Forfeit in the app at least 90 seconds before the block start time.\n\n\n\nIf you need to cancel an AMZL or SSD block within 45 minutes of its start time, you'll have a 5-minute grace period to forfeit without penalty. This forfeiture won't count as a missed delivery block.\n\nTo forfeit an accepted block:\n\n1. In the Amazon Flex app, select the Menu icon and then select Calendar.\n\n2. Select a day to view additional details, and then select the block you want to forfeit.\n\n3. Select Forfeit This Time and then swipe to confirm.\n\nFor more information on scheduling delivery blocks and preferred scheduling, refer to https://flex.amazon.com/faq.\n\n\n\nThe Amazon Flex Team."
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "Denied LHE",
+            "Unnamed: 2": "We're sorry to hear about your situation and understand sometimes things happen.\n\nAfter reviewing your account, we see that we've already made multiple exceptions in the past when you couldn't deliver during a scheduled block due to personal circumstances.\n\nAs a result this instance will remain in your delivery history. However, your eligibility to deliver with Amazon Flex will be impacted only if it continues to happen repeatedly.",
+            "Unnamed: 3": "Repeat Denied",
+            "Unnamed: 4": "Repeat 1",
+            "Unnamed: 5": "Thank you for sharing this information about your block on [DATE/TIME].\n\nAfter further review, our original decision hasn't changed. As a result, this instance will be included in your delivery history."
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "Repeat Exempt",
+            "Unnamed: 2": "Thank you for sharing this information. I reviewed the information and see that the situation was outside of your control. This instance will be removed from your delivery history. Thank you for your patience",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "Repeat 2",
+            "Unnamed: 5": "Thank you for sharing this information. I reviewed these details along with your delivery history and our original decision hasn't changed."
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "",
+            "Unnamed: 2": "I found that one or more of the delivery issues impacting your block on [DATE] were beyond your control. This issue has been removed from your delivery history. It may take 24 hours to be reflected in your Standing Details.\n\nPlease know that removing this particular issue from your account is only one part of your delivery history. So, it may not improve your overall standing.",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "Repeat 3",
+            "Unnamed: 5": "We understand that sometimes things happen and we do consider many things when reviewing your delivery history."
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "",
+            "Unnamed: 2": "",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "",
+            "Unnamed: 5": ""
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "Transfers",
+            "Unnamed: 1": "Right Team",
+            "Unnamed: 2": "please allow me moment to connect you to the right team",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "I see you have a payment issue. I will transfer you to a specialist who can help. Please hold for a moment.",
+            "Unnamed: 5": ""
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "On Road",
+            "Unnamed: 2": "I understand that you're contacting us about an On-Road issue. I'm going to transfer this chat to someone who is able to help you with this issue.",
+            "Unnamed: 3": "About pay",
+            "Unnamed: 4": "",
+            "Unnamed: 5": ""
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "Pay",
+            "Unnamed: 2": "I understand that you’re contacting us about a Payment issue. I'm going to transfer you to someone who is able to help you with this issue. Do you mind holding for a moment while I find another individual to support you?",
+            "Unnamed: 3": "US Flex DP Offroad Payments English Chat",
+            "Unnamed: 4": "",
+            "Unnamed: 5": ""
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "Share image or photo",
+            "Unnamed: 2": "You can send a photo or video to: amazonflex-support@amazon.com please",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "",
+            "Unnamed: 5": ""
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "Pay form",
+            "Unnamed: 2": "I'll need to submit a form to the right team to help you out. Would you mind waiting a couple of minutes while I explain the situation?",
+            "Unnamed: 3": "https://river.amazon.com/HYD20/workflows?buildingType=SDSInternal&workflowId=undefined&q0=481050d5-8eba-418a-bc42-34661be31315&q1=c899a4ed-ec42-41ad-92d4-cb9bd8ec040d&q2=fdbf4cb1-0ad9-4351-8391-3ced4d6adb18&q3=c0d43089-06c3-4399-ac48-24aa638eaaa8&id=c0d43089-06c3-4399-ac48-24aa638eaaa8",
+            "Unnamed: 4": "",
+            "Unnamed: 5": ""
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "Escalation",
+            "Unnamed: 2": "I understand that these concerns aren't easy for you, and we want to be able to resolve your concerns. I've passed your information along to the appropriate team for further investigation. You'll get a response with further guidance in 2-3 business days.",
+            "Unnamed: 3": "https://river.amazon.com/HYD20/workflows?buildingType=SDSInternal&q0=481050d5-8eba-418a-bc42-34661be31315&q1=c899a4ed-ec42-41ad-92d4-cb9bd8ec040d&q2=fdbf4cb1-0ad9-4351-8391-3ced4d6adb18&q3=987263d4-57f2-490e-b08a-4ea96080943a&id=987263d4-57f2-490e-b08a-4ea96080943a",
+            "Unnamed: 4": "",
+            "Unnamed: 5": ""
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "",
+            "Unnamed: 2": "",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "",
+            "Unnamed: 5": ""
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "Other",
+            "Unnamed: 1": "Close Out",
+            "Unnamed: 2": "Thank you for providing additional information to us. No action is needed from you at this time.",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "",
+            "Unnamed: 5": ""
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "second Acknowledgment",
+            "Unnamed: 2": "I apologize for the delay in resolving your question. We are still investigating and will provide an update to you as soon as possible. Most delivery partners will receive a response within six (6) days.",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "",
+            "Unnamed: 5": ""
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "Close/thanks",
+            "Unnamed: 2": "It was a pleasure assisting you. Thanks for being part of this feature. You’ll receive a survey from Amazon shortly and would love to hear your feedback on this feature! Looking forward to support you in the future!",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "",
+            "Unnamed: 5": ""
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "Transfer",
+            "Unnamed: 2": "I have forwarded your query to the concerned team, they will reach out to with the appropriate resolution",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "",
+            "Unnamed: 5": ""
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "Blank Contact",
+            "Unnamed: 2": "Hello,\n\nI am writing to you because we got disconnected during our chat on March 1, 2026.\n\nI wasn't able to collect enough information to address your question. I apologize for the inconvenience.\n\nPlease feel free to contact Support again so we can help you.\n\nFor faster access to Support, try live chat or talk to us by signing in to the Amazon Flex app and going to the Main Menu > Help > Contact us.",
+            "Unnamed: 3": "Are we connected?",
+            "Unnamed: 4": "",
+            "Unnamed: 5": ""
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "Chat Dropped",
+            "Unnamed: 2": "Hello,\n\nI am writing to you because we got disconnected during our chat on [DATE] about [ISSUE].\n\nI understand that you needed to know about [summary of issue]. The current status of the issue is [current status].\n\nPlease feel free to contact Support again so we can help you.\n\nFor faster access to Support, try live chat or talk to us by signing in to the Amazon Flex app and going to the Main Menu > Help > Contact us.",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "",
+            "Unnamed: 5": ""
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "Chat Transcript",
+            "Unnamed: 2": "Hello,\n\nIt is a follow-up email for a recent chat conversation with Amazon Flex support. Here’s the chat transcript for your contact on March 15, 2026.\n\n[COPY AND PASTE THE TRANSCRIPT]\n\nFor faster access to Support, try live chat or talk to us by signing in to the Amazon Flex app and going to the Main Menu > Help > Contact us.\n\nThe Amazon Flex Support",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "",
+            "Unnamed: 5": ""
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "",
+            "Unnamed: 2": "",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "",
+            "Unnamed: 5": ""
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "",
+            "Unnamed: 2": "",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "",
+            "Unnamed: 5": ""
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "",
+            "Unnamed: 2": "",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "",
+            "Unnamed: 5": ""
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "",
+            "Unnamed: 2": "I have provided resolution from my end. I have to disconnect the chat and if you have any query means feel free to reach support anytime and thanks for contacting support. Have a great day.",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "",
+            "Unnamed: 5": "I see that your Background Check Information is in progress"
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "",
+            "Unnamed: 2": "",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "",
+            "Unnamed: 5": ""
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "",
+            "Unnamed: 2": "app issue check-in pending review, please investigate pay",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "",
+            "Unnamed: 5": "can you please elaborate the issue"
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "",
+            "Unnamed: 2": "",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "",
+            "Unnamed: 5": ""
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "",
+            "Unnamed: 2": "",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "",
+            "Unnamed: 5": ""
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "",
+            "Unnamed: 2": "",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "",
+            "Unnamed: 5": ""
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "",
+            "Unnamed: 2": "",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "",
+            "Unnamed: 5": ""
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "",
+            "Unnamed: 2": "\nThe details mentioned below don’t match our records, could you please provide correct details about the issue, including the date and time of the block.",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "",
+            "Unnamed: 5": ""
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "",
+            "Unnamed: 2": "We are sorry to hear that you have had a negative experience with Amazon Flex. We want to provide an exceptional experience for Amazon Flex delivery partners and greatly value feedback from our delivery partners. \n\nWe appreciate that you took the time to write to us, and we've passed your feedback along to the appropriate team for review.",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "",
+            "Unnamed: 5": ""
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "",
+            "Unnamed: 2": "",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "",
+            "Unnamed: 5": ""
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "",
+            "Unnamed: 2": "I'm sorry to hear that you are experiencing issues with the Amazon Flex app.\n\nHave you tried logging out and logging back into the app? We have noticed that this solves the most common issues.\nTo sign out of the Amazon Flex app:\n\n1. Tap the Main Menu icon.\n2. Tap \"Settings.\"\n3. Tap \"Sign out\" at the bottom of the screen.\n\nOnce you are signed out, to sign back in just click the \"Sign in with Amazon\" button and log in.",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "",
+            "Unnamed: 5": ""
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "",
+            "Unnamed: 2": "You have been added to the interest list for the region that you selected. Wait times vary by location, and Amazon can't provide estimates. Amazon will notify you via email when delivery opportunities become available in your region. Until then, there's no action needed from you.\n\nKeep a lookout for the email as spaces fill up fast. And it's important to return to the app to remove from the interest list after we email you.",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "",
+            "Unnamed: 5": ""
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "",
+            "Unnamed: 2": "",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "",
+            "Unnamed: 5": ""
+        },
+        {
+            "Here is the update excel sheet. use this. Click here": "",
+            "Unnamed: 1": "",
+            "Unnamed: 2": "Changing your Zip Code can only be completed every 90 days and doesn't guarantee delivery opportunities.",
+            "Unnamed: 3": "",
+            "Unnamed: 4": "",
+            "Unnamed: 5": ""
+        }
+    ],
+    "CHAT TRANSCRIPT": [
+        {
+            "Use Case": "OPENING",
+            "Script": "Hi, I am Afroz. I am here to help you."
+        },
+        {
+            "Use Case": "",
+            "Script": "Could you please elaborate the issue?"
+        },
+        {
+            "Use Case": "",
+            "Script": "Hi, I am Afroz. How may I assist you today?"
+        },
+        {
+            "Use Case": "",
+            "Script": "Hello, My name is Afroz. I'm sorry your previous chat disconnected. I will try and pick up where you left off."
+        },
+        {
+            "Use Case": "",
+            "Script": "Allow me 2 minutes to read the chat."
+        },
+        {
+            "Use Case": "",
+            "Script": "I am doing great, Thank you for asking.\nI hope you're doing well too."
+        },
+        {
+            "Use Case": "",
+            "Script": "please allow me to read previous chat."
+        },
+        {
+            "Use Case": "CLOSING",
+            "Script": "Thank you for contacting Amazon Flex. have a good day! I wish you have a great smile through out the day as well."
+        },
+        {
+            "Use Case": "",
+            "Script": "Please take care of yourself and your family."
+        },
+        {
+            "Use Case": "",
+            "Script": "Thank you for your patience and understanding in this matter"
+        },
+        {
+            "Use Case": "",
+            "Script": "Thank you for signing up with Amazon Flex."
+        },
+        {
+            "Use Case": "",
+            "Script": "Thank you for bringing this to our attention. Your experience is our priority and is super important to us."
+        },
+        {
+            "Use Case": "",
+            "Script": "Please don't thank me. it is my honor to be able to assist a loyal Amazon Flex delivery partner like you."
+        },
+        {
+            "Use Case": "",
+            "Script": "It is our privilege to have a valuable Amazon Flex delivery partner like you & we want to make sure you are always taken care of."
+        },
+        {
+            "Use Case": "",
+            "Script": "I hope i managed to put a smile on your face."
+        },
+        {
+            "Use Case": "",
+            "Script": "It was a pleasure assisting you. Thanks for being part of this feature. You’ll receive a survey from Amazon shortly and would love to hear your feedback on this feature! Looking forward to support you in the future!"
+        },
+        {
+            "Use Case": "",
+            "Script": "Trust me if there was any option with me, I would have taken the ownership and helped you right away."
+        },
+        {
+            "Use Case": "",
+            "Script": "Please be assured that we are here to make things easier for you and we'll take every action to prevent you from bearing any loss."
+        },
+        {
+            "Use Case": "ADDITIONAL HELP",
+            "Script": "Anything else to make your day even better?"
+        },
+        {
+            "Use Case": "",
+            "Script": "Its my pleasure assisting valuable Amazon Flex delivery partner like you, Is there anything else I can help you with?"
+        },
+        {
+            "Use Case": "APOLOGIZING",
+            "Script": ""
+        },
+        {
+            "Use Case": "",
+            "Script": "I would have felt the same way if this had to happen to me. I’m afraid I can’t erase what has already taken place, however please don't worry i'll help you with [Problem] right away"
+        },
+        {
+            "Use Case": "",
+            "Script": "I am equally disappointed on my end as I can completely understand [Problem]"
+        },
+        {
+            "Use Case": "",
+            "Script": "Firstly, please accept my sincere apologies for any inconvenience caused by this situation."
+        },
+        {
+            "Use Case": "",
+            "Script": "Sorry for the delay, it took longer than expected."
+        },
+        {
+            "Use Case": "",
+            "Script": "I feel very unhappy about this happening to a valuable Amazon Flex delivery partner like you. I’d like to help you right away and change the way you feel about our services."
+        },
+        {
+            "Use Case": "",
+            "Script": "I'm so sorry you experienced that. We strive to provide a much better experience than what you've had today."
+        },
+        {
+            "Use Case": "",
+            "Script": "we are extremely sorry for the inconvenience caused to you."
+        },
+        {
+            "Use Case": "HELP",
+            "Script": "Moreover, To ensure a quick resolution, I've personally contacted and forwarded your utter dissatisfaction. I've also instructed them to [Solution]"
+        },
+        {
+            "Use Case": "",
+            "Script": "Thanks for reaching out! I'll need to submit a form to the right team to help you out. Would you mind waiting a couple of minutes while I explain the situation?"
+        },
+        {
+            "Use Case": "",
+            "Script": "upon checking my resources,i can see that you are assigned to a operational service area and you shall receive offers "
+        },
+        {
+            "Use Case": "",
+            "Script": "i understand the issue but for such cases please contact our on-road support immediately when you face any issue while delivering the item and they will help you with this right away so that you can avoid any defect affecting your standings."
+        },
+        {
+            "Use Case": "",
+            "Script": "We continuously monitor the service provided and take complaints of this nature very seriously.\nThanks for reaching out! I'll need to submit a form to the right team to help you out. Would you mind waiting a couple of minutes while I explain the situation?"
+        },
+        {
+            "Use Case": "WAITING",
+            "Script": "Please stay connected so that i can help you in the best way possible."
+        },
+        {
+            "Use Case": "",
+            "Script": "Please hold on while i process this for you."
+        },
+        {
+            "Use Case": "",
+            "Script": "please allow me a moment to check this for you"
+        },
+        {
+            "Use Case": "",
+            "Script": "Please wait while I look into resolving this issue for you."
+        },
+        {
+            "Use Case": "",
+            "Script": "Please wait for a minute while I research this issue for you. Stay online and leave this chat window open. Is that ok?"
+        },
+        {
+            "Use Case": "",
+            "Script": "Sorry you ran into such a persistent issue. I'm looking into this right now and will get back to you shortly."
+        },
+        {
+            "Use Case": "",
+            "Script": "I am sorry this is taking longer than usual, would you mind waiting a couple of minutes while I explain the situation?"
+        },
+        {
+            "Use Case": "",
+            "Script": "sorry for the delay it took longer than expected."
+        },
+        {
+            "Use Case": "",
+            "Script": "Allow me a moment while I verify this information on my end."
+        },
+        {
+            "Use Case": "EXTRA LINES",
+            "Script": "Thanks for explaining the issue in detail!  "
+        },
+        {
+            "Use Case": "",
+            "Script": "I'd like to look up the previous contact you reached out to us with. Could you let me know when you contacted us last?"
+        },
+        {
+            "Use Case": "",
+            "Script": ""
+        },
+        {
+            "Use Case": "",
+            "Script": "just to confirm are you referring to"
+        },
+        {
+            "Use Case": "",
+            "Script": "upon checking my resources,i can see that."
+        },
+        {
+            "Use Case": "PARK/ IDLE DP",
+            "Script": "I don't mean to rush you, but we've been idle for 2 minutes. I want to make sure our chat's still connected. If you aren't able to respond in 2 minutes, this chat will close."
+        },
+        {
+            "Use Case": "",
+            "Script": "I'm afraid I can't see your messages in the chat box. Thank you for contacting us. Feel free to come back at any time."
+        },
+        {
+            "Use Case": "",
+            "Script": "This chat has been idle for two minutes. I may close this chat after two more minutes. If it isn't convenient for you to reply to me at the moment, please contact us again later."
+        },
+        {
+            "Use Case": "",
+            "Script": "Considering the issue is resolved, and you have no further issues, I have closed the conversation."
+        },
+        {
+            "Use Case": "",
+            "Script": "I'm afraid I can't see your messages in the chat box. If it isn't convenient for you to reply to me at the moment Feel free to come back at any time.Thank you for contacting us."
+        },
+        {
+            "Use Case": "",
+            "Script": "dp is away and idle. Dp is not responding."
+        },
+        {
+            "Use Case": "",
+            "Script": "The chat has been idle for 2 mins .Considering the issue is resolved .i will now close this chat . Feel free to come back at any time."
+        },
+        {
+            "Use Case": "",
+            "Script": "dp is transferred"
+        },
+        {
+            "Use Case": "WARNINGS",
+            "Script": "At this point, I need to end this chat."
+        },
+        {
+            "Use Case": "Abusive warning 1",
+            "Script": "I'll help you with this issue but please refrain from using any inappropriate language."
+        },
+        {
+            "Use Case": "Abusive warning 2",
+            "Script": "I can see you're upset. I can assure you that I'm here to help and I'll do everything possible to resolve this issue. But if you continue to use inappropriate language I'll have to end this chat."
+        },
+        {
+            "Use Case": "More info",
+            "Script": "I need just a little more info before I can look into this for you, and then we'll get it sorted."
+        },
+        {
+            "Use Case": "",
+            "Script": "I'm happy to help! I'll get right to it, but I need some more info from you."
+        },
+        {
+            "Use Case": "",
+            "Script": "Thanks for explaining the issue in detail! I'd like to look up the previous contact you reached out to us with. Could you let me know when you contacted us last?"
+        },
+        {
+            "Use Case": "",
+            "Script": "I'd like to look up the previous contact you reached out to us with. Could you let me know when you contacted us last?"
+        },
+        {
+            "Use Case": "",
+            "Script": "Have you tried logging out and back into your app to see if that fixes the issue?"
+        },
+        {
+            "Use Case": "",
+            "Script": "To help you with your query, could you help me with the time of this block?"
+        },
+        {
+            "Use Case": "TRANSFER",
+            "Script": "Looks like our escalation team handled this use case on [DATE]. I am going to pass this case to our escalations team and they will get back to you within 24 hours."
+        },
+        {
+            "Use Case": "",
+            "Script": "Thanks for reaching out! I'll need to submit a form to the right team to help you out. Would you mind waiting a couple of minutes while I explain the situation?"
+        },
+        {
+            "Use Case": "",
+            "Script": "I’ve forwarded this situation to the relevant team to investigate it further."
+        },
+        {
+            "Use Case": "",
+            "Script": "I have forwarded your query to the concerned team, they will reach out to with the appropriate resolution"
+        },
+        {
+            "Use Case": "",
+            "Script": "in this case i will quickly transfer this chat to relevant specialist team who will assist you further ."
+        },
+        {
+            "Use Case": "REPHRASE ",
+            "Script": "Let me just make sure I understand you right. You'd like to [rephrase the customer's question]. Is that accurate?"
+        },
+        {
+            "Use Case": "",
+            "Script": "If my understanding is correct, you're looking for a way to [do this]?"
+        },
+        {
+            "Use Case": "",
+            "Script": "Let me check that I have this right. You need help with the [restated problem], correct?"
+        },
+        {
+            "Use Case": "LANGUAGE REQUEST",
+            "Script": "Thank you for contacting support. At this time, we don't offer Spanish or other languages for our Amazon Flex Chat support. I would like to help you resolve this chat in English if at all possible. If you have anyone with you that is available to help you continue in English, please ask them for assistance."
+        },
+        {
+            "Use Case": "amazon_flex_support_chat_transcript",
+            "Script": "Hello [NAME],\n\nIt is a follow-up email for a recent chat conversation with Amazon Flex support. Here’s the chat transcript for your contact on [MM/DD/YYY].\n\n[COPY AND PASTE THE TRANSCRIPT]\n\nFor faster access to Support, try live chat or talk to us by signing in to the Amazon Flex app and going to the Main Menu > Help > Contact us.\n\nThe Amazon Flex Support. \n"
+        },
+        {
+            "Use Case": "amazon_flex_chat_dropped_acknowledgment",
+            "Script": "Hello [NAME],\nI am writing to you because we got disconnected during our chat on [DATE] about [ISSUE].\n[IN CASE YOU HAVE ENOUGH INFORMATION]:\nI understand that you needed to know about [summary of issue]. The current status of the issue is [current status].\n[IN CASE YOU HAVE NOT GATHERED ANY INFORMATION]:\nI wasn't able to collect enough information to address your question. I apologize for the inconvenience.\nPlease feel free to contact Support again so we can help you.\nFor faster access to Support, try live chat or talk to us by signing in to the Amazon Flex app and going to the Main Menu > Help > Contact us."
+        },
+        {
+            "Use Case": "",
+            "Script": ""
+        },
+        {
+            "Use Case": "",
+            "Script": ""
+        },
+        {
+            "Use Case": "opening",
+            "Script": "Thank you for contacting Amazon Flex Support. how may I assist you today"
+        },
+        {
+            "Use Case": "",
+            "Script": ""
+        },
+        {
+            "Use Case": "wait ",
+            "Script": "Please give me a moment while I check"
+        },
+        {
+            "Use Case": "",
+            "Script": ""
+        },
+        {
+            "Use Case": "not eligible for region",
+            "Script": " I would love to help you. However I hope you understand our limitation and situation on our end as we are bounded to the policy and we are just explaining what can be done on our end as per policy. This is common procedure for all our drivers.As much as I would love to help you with this however this is beyond my scope and we also have limitations regarding this.'"
+        },
+        {
+            "Use Case": "",
+            "Script": ""
+        },
+        {
+            "Use Case": "1st follow up",
+            "Script": "I don't mean to rush you, but we've been idle for 2 minutes. I want to make sure our chat's still connected. If you aren't able to respond in 2 minutes, this chat will close."
+        },
+        {
+            "Use Case": "",
+            "Script": ""
+        },
+        {
+            "Use Case": "2nd folllwo ",
+            "Script": "I'm afraid I can't see your messages in the chat box. Thank you for contacting us. Feel free to come back at any time."
+        },
+        {
+            "Use Case": "",
+            "Script": ""
+        },
+        {
+            "Use Case": "",
+            "Script": ""
+        },
+        {
+            "Use Case": "date and time",
+            "Script": "To assist me in investigating, could you please provide me with the date and time of the block the issue occurred?"
+        },
+        {
+            "Use Case": "",
+            "Script": ""
+        },
+        {
+            "Use Case": "no further help ",
+            "Script": "Since, there is no other help required. Please allow me to end these chat. It was a pleasure assisting you with this, Thanks for contacting Amazon."
+        },
+        {
+            "Use Case": "",
+            "Script": ""
+        },
+        {
+            "Use Case": "anything else",
+            "Script": "Is there anything else I may assist you with today?"
+        },
+        {
+            "Use Case": "",
+            "Script": "Thank you for contacting Amazon Flex. have a good day! I wish you have a great smile through out the day."
+        }
+    ]
+}

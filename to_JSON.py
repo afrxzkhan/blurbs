@@ -1,7 +1,7 @@
 import pandas as pd
 
 # 1. Load the Excel file (setting sheet_name=None reads ALL sheets)
-excel_file = "ACHT_booster.xlsx"
+excel_file = "chats.xlsx"
 all_sheets = pd.read_excel(excel_file, sheet_name=None)
 
 # 2. Create a dictionary to hold the cleaned data from each sheet
@@ -17,7 +17,7 @@ for sheet_name, df in all_sheets.items():
 
 # 4. Save the combined master dictionary directly to a JSON file
 import json
-output_json = "ACHT_booster.json"
+output_json = "chats.json"
 
 with open(output_json, "w", encoding="utf-8") as json_file:
     json.dump(combined_data, json_file, indent=4, ensure_ascii=False)
