@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SDS Flex Chats — Owned by @tafrokha (Afroz Khan)</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      /* High-Contrast Low-Fatigue Daylight Palette for 8-Hour Shifts */
+      --bg-app: #eef2f6;
+      --bg-header: #ffffff;
+      --bg-subbar: #f8fafc;
+      --bg-card: #ffffff;
+      --bg-card-header: #f1f5f9;
+      --bg-col-head: #f8fafc;
+      --bg-row-hover: #e2e8f0;
+      --bg-input: #ffffff;
+      --bg-cell-ann: #eff6ff;
+      --bg-cell-ann-hover: #dbeafe;
+      --bg-cell-blurb: #ecfdf5;
+      --bg-cell-blurb-hover: #d1fae5;
+      --bg-cell-standings: #fffbeb;
+      --bg-cell-standings-hover: #fef3c7;
+      --bg-cell-both: #f1f5f9;
+      --bg-cell-both-hover: #e2e8f0;
+      --text-main: #0f172a;
+      --text-muted: #334155;
+      --text-dim: #64748b;
+      --border-color: #cbd5e1;
+      --border-subtle: #e2e8f0;
+    }
+
+    html.dark {
+      /* Ergonomic 8-Hour Low-Glare Slate Palette for 24" FHD ThinkCentre Monitor */
+      --bg-app: #0b1017;
+      --bg-header: #101722;
+      --bg-subbar: #141d2b;
+      --bg-card: #131b26;
+      --bg-card-header: #192332;
+      --bg-col-head: #101722;
+      --bg-row-hover: #1d293b;
+      --bg-input: #0c121b;
+      --bg-cell-ann: rgba(37, 99, 235, 0.14);
+      --bg-cell-ann-hover: rgba(59, 130, 246, 0.28);
+      --bg-cell-blurb: rgba(16, 185, 129, 0.13);
+      --bg-cell-blurb-hover: rgba(16, 185, 129, 0.26);
+      --bg-cell-standings: rgba(245, 158, 11, 0.15);
+      --bg-cell-standings-hover: rgba(245, 158, 11, 0.28);
+      --bg-cell-both: rgba(148, 163, 184, 0.12);
+      --bg-cell-both-hover: rgba(148, 163, 184, 0.24);
+      --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --border-color: #263447;
+      --border-subtle: #1d2837;
+    }
+
+    html.sepia-mode {
+      /* Warm Low-Blue-Light Shift Mode */
+      --bg-app: #161412;
+      --bg-header: #1f1c18;
+      --bg-subbar: #25211c;
+      --bg-card: #1e1b17;
+      --bg-card-header: #27231e;
+      --bg-col-head: #1a1714;
+      --bg-row-hover: #2d2822;
+      --bg-input: #141210;
+      --bg-cell-ann: rgba(217, 119, 6, 0.15);
+      --bg-cell-ann-hover: rgba(217, 119, 6, 0.28);
+      --bg-cell-blurb: rgba(16, 185, 129, 0.13);
+      --bg-cell-blurb-hover: rgba(16, 185, 129, 0.26);
+      --bg-cell-standings: rgba(245, 158, 11, 0.18);
+      --bg-cell-standings-hover: rgba(245, 158, 11, 0.32);
+      --bg-cell-both: rgba(181, 168, 149, 0.12);
+      --bg-cell-both-hover: rgba(181, 168, 149, 0.24);
+      --text-main: #ebe3d5;
+      --text-muted: #b5a895;
+      --text-dim: #847868;
+      --border-color: #383129;
+      --border-subtle: #2b2620;
+    }
+
+    body {
+      background-color: var(--bg-app);
+      color: var(--text-main);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      overflow-x: hidden;
+      user-select: none;
+    }
+
+    .app-header {
+      background-color: var(--bg-header);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .app-subbar {
+      background-color: var(--bg-subbar);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .autofill-input {
+      background-color: var(--bg-input);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      user-select: text;
+    }
+    .autofill-input:focus {
+      border-color: #3b82f6;
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.22);
+    }
+
+    .cat-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 0.5rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cat-header {
+      background-color: var(--bg-card-header);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .col-subhead {
+      background-color: var(--bg-col-head);
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 9px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      font-weight: 700;
+    }
+
+    .scenario-row {
+      border-bottom: 1px solid var(--border-subtle);
+      transition: background-color 0.08s ease;
+    }
+    .scenario-row:last-child {
+      border-bottom: none;
+    }
+    .scenario-row:hover {
+      background-color: var(--bg-row-hover);
+    }
+
+    .cell-btn {
+      cursor: pointer;
+      transition: all 0.1s ease;
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .cell-btn:active {
+      transform: scale(0.96);
+    }
+
+    .cell-ann {
+      background-color: var(--bg-cell-ann);
+      border-left: 1px solid var(--border-subtle);
+    }
+    .cell-ann:hover {
+      background-color: var(--bg-cell-ann-hover);
+    }
+
+    .cell-blurb {
+      background-color: var(--bg-cell-blurb);
+      border-left: 1px solid var(--border-subtle);
+    }
+    .cell-blurb:hover {
+      background-color: var(--bg-cell-blurb-hover);
+    }
+
+    .cell-standings {
+      background-color: var(--bg-cell-standings);
+      border-left: 1px solid var(--border-subtle);
+    }
+    .cell-standings:hover {
+      background-color: var(--bg-cell-standings-hover);
+    }
+
+    .cell-both {
+      background-color: var(--bg-cell-both);
+      border-left: 1px solid var(--border-subtle);
+    }
+    .cell-both:hover {
+      background-color: var(--bg-cell-both-hover);
+    }
+
+    .cell-empty {
+      border-left: 1px solid var(--border-subtle);
+      opacity: 0.4;
+    }
+
+    .copied-flash {
+      background-color: #10b981 !important;
+      color: #ffffff !important;
+      font-weight: 700 !important;
+    }
+
+    /* Calibrated for 24-inch Full HD (1920x1080) ThinkCentre 1-Page Fit */
+    .density-fhd .scenario-row {
+      min-height: 24px;
+      font-size: 11.2px;
+      line-height: 1.15;
+    }
+    .density-fhd .cat-header {
+      padding: 4px 8px;
+      font-size: 11px;
+    }
+    .density-comfortable .scenario-row {
+      min-height: 32px;
+      font-size: 12.5px;
+      line-height: 1.25;
+    }
+    .density-comfortable .cat-header {
+      padding: 7px 10px;
+      font-size: 12px;
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(148, 163, 184, 0.3);
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(148, 163, 184, 0.5);
+    }
+  </style>
+</head>
+<body class="density-fhd min-h-screen flex flex-col">
+
+  <!-- BAR 1: BRAND + DIRECT CONTACTS + CHAT WORKFLOW TABS -->
+  <header class="app-header px-3.5 py-3 flex flex-wrap items-center justify-between gap-2.5 z-30 sticky top-0">
+    <!-- Left: Brand + Owner + Contact Links -->
+    <div class="flex items-center gap-5 flex-wrap">
+      <div class="flex items-center gap-5">
+        <span class="inline-flex items-center justify-center min-w-[5.5rem] h-7 px-2 rounded-lg bg-blue-500/15 text-blue-400 font-mono font-bold text-xs border border-blue-500/30 shadow-2xs whitespace-nowrap" title="Locked Flex Tier 1 Signature: ╭af────────────────────af╮">Afroz khan</span>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <span class="font-bold text-xs sm:text-sm tracking-tight">SDS Flex Chats</span>
+            <span class="text-[10px] font-medium px-1.5 py-0.2 rounded bg-blue-500/10 text-blue-400 border border-blue-500/25">
+              Owner @tafrokha@amazon.com
+            </span>
+          </div>
+          <!-- Direct Contact Links -->
+          <div class="flex items-center gap-1 mt-0.5">
+            <a href="https://app.chime.aws/conversations/new?email=tafrokha@amazon.com&message=Hi%20Afroz%20(%40tafrokha)%2C%20regarding%20the%20SDS%20Flex%20Chats%20tool%3A" target="_blank" rel="noopener noreferrer" data-contact="chime" class="contact-link px-1.5 py-0.2 rounded text-[10px] font-medium bg-sky-500/10 hover:bg-sky-500/25 text-sky-500 dark:text-sky-400 border border-sky-500/25 transition-all" title="Chime @tafrokha (also copies @tafrokha)">💬 Chime Me</a>
+            <a href="https://wa.me/919701043811?text=Hi%20Afroz%20(%40tafrokha)%2C%20regarding%20the%20SDS%20Flex%20Chats%20tool%3A" target="_blank" rel="noopener noreferrer" class="px-1.5 py-0.2 rounded text-[10px] font-medium bg-emerald-500/10 hover:bg-emerald-500/25 text-emerald-600 dark:text-emerald-400 border border-emerald-500/25 transition-all" title="WhatsApp Afroz">📱 WhatsApp</a>
+            <a href="https://phonetool.amazon.com/users/tafrokha" target="_blank" rel="noopener noreferrer" class="px-1.5 py-0.2 rounded text-[10px] font-medium bg-amber-500/10 hover:bg-amber-500/25 text-amber-600 dark:text-amber-400 border border-amber-500/25 transition-all" title="Open Internal PhoneTool Profile">🪪 PhoneTool</a>
+            <a href="mailto:tafrokha@amazon.com?subject=SDS%20Flex%20Chats%20Feedback" class="px-1.5 py-0.2 rounded text-[10px] font-medium bg-indigo-500/10 hover:bg-indigo-500/25 text-indigo-600 dark:text-indigo-400 border border-indigo-500/25 transition-all" title="Email tafrokha@amazon.com">✉️ Email Me</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="h-12 w-px bg-slate-300 dark:bg-slate-700/80 hidden xl:block"></div>
+
+      <!-- Predictable Chat Category Navigation Tabs -->
+      <nav class="flex items-center gap-1 bg-slate-200/75 dark:bg-slate-800/90 p-0.5 rounded-lg border border-slate-300/80 dark:border-slate-700/80 flex-wrap" id="statusTabs" role="tablist">
+        <button type="button" data-status="ALL" class="status-tab px-2.5 py-1 rounded-md text-[11px] font-semibold transition-all bg-blue-600 text-white shadow-xs">
+          ⚡ All Chats (1-Page)
+        </button>
+        <button type="button" data-status="Flow" class="status-tab px-2.5 py-1 rounded-md text-[11px] font-medium transition-all hover:text-blue-400 flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          <span>1. Core Chat Flow</span>
+          <span id="count-Flow" class="text-[9.5px] opacity-75 font-mono">(29)</span>
+        </button>
+        <button type="button" data-status="Appeals" class="status-tab px-2.5 py-1 rounded-md text-[11px] font-medium transition-all hover:text-blue-400 flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-sky-400"></span>
+          <span>2. Appeals &amp; Offers</span>
+          <span id="count-Appeals" class="text-[9.5px] opacity-75 font-mono">(14)</span>
+        </button>
+        <button type="button" data-status="RegionApp" class="status-tab px-2.5 py-1 rounded-md text-[11px] font-medium transition-all hover:text-blue-400 flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+          <span>3. Cancel, Region &amp; App</span>
+          <span id="count-RegionApp" class="text-[9.5px] opacity-75 font-mono">(14)</span>
+        </button>
+        <button type="button" data-status="Transfers" class="status-tab px-2.5 py-1 rounded-md text-[11px] font-medium transition-all hover:text-blue-400 flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-rose-400"></span>
+          <span>4. Transfers &amp; Follow-Up</span>
+          <span id="count-Transfers" class="text-[9.5px] opacity-75 font-mono">(12)</span>
+        </button>
+        <button type="button" data-status="Transcript" class="status-tab px-2.5 py-1 rounded-md text-[11px] font-medium transition-all hover:text-blue-400 flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-violet-400"></span>
+          <span>⚡ Chat Transcript Pro</span>
+          <span id="count-Transcript" class="text-[9.5px] opacity-75 font-mono">(14)</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BAR 1.1: QUICK-FIRE 1-CLICK CHAT STRIP + SEARCH & THEME + COPIED TODAY -->
+  <header class="app-header px-3.5 py-2.5 flex flex-wrap items-center justify-between gap-2.5 z-20">
+    <!-- Left: 1-Click Live Chat Quick-Fire Strip -->
+    <div class="flex items-center gap-1.5 flex-wrap">
+      <span class="text-[10px] font-bold uppercase tracking-wider text-blue-500 dark:text-blue-400">
+        ⚡ Quick Chat:
+      </span>
+      <button type="button" data-quick-id="chat_greet_afroz" class="quick-fire-btn px-2 py-1 rounded-md text-[11px] font-semibold bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30 transition-all" title="Copy Greeting (uses selected Agent Name)">
+        👋 Greeting
+      </button>
+      <button type="button" data-quick-id="chat_wait_2m_stay" class="quick-fire-btn px-2 py-1 rounded-md text-[11px] font-semibold bg-sky-500/15 hover:bg-sky-500/25 text-sky-700 dark:text-sky-300 border border-sky-500/30 transition-all" title="Could you please stay connected for two minutes while I research this for you?">
+        ⏳ Hold 2m
+      </button>
+      <button type="button" data-quick-id="chat_info_datetime1" class="quick-fire-btn px-2 py-1 rounded-md text-[11px] font-semibold bg-amber-500/15 hover:bg-amber-500/25 text-amber-700 dark:text-amber-300 border border-amber-500/30 transition-all" title="Ask for block date and time">
+        🗓️ Ask Date/Time
+      </button>
+      <button type="button" data-quick-id="chat_idle_1st" class="quick-fire-btn px-2 py-1 rounded-md text-[11px] font-semibold bg-amber-500/15 hover:bg-amber-500/25 text-amber-700 dark:text-amber-300 border border-amber-500/30 transition-all" title="2-minute idle 1st warning">
+        ⏰ Idle 1 (2m)
+      </button>
+      <button type="button" data-quick-id="chat_idle_last" class="quick-fire-btn px-2 py-1 rounded-md text-[11px] font-semibold bg-amber-500/15 hover:bg-amber-500/25 text-amber-700 dark:text-amber-300 border border-amber-500/30 transition-all" title="2-minute idle last warning">
+        ⏰ Idle 2 (Last)
+      </button>
+      <button type="button" data-quick-id="chat_idle_closing" class="quick-fire-btn px-2 py-1 rounded-md text-[11px] font-semibold bg-rose-500/15 hover:bg-rose-500/25 text-rose-700 dark:text-rose-300 border border-rose-500/30 transition-all" title="Close idle chat (can't see messages)">
+        🚪 Idle Close
+      </button>
+      <button type="button" data-quick-id="chat_end_anything_else" class="quick-fire-btn px-2 py-1 rounded-md text-[11px] font-semibold bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30 transition-all" title="Is there anything else I may assist you with today?">
+        ❓ Anything Else?
+      </button>
+      <button type="button" data-quick-id="chat_end_smile" class="quick-fire-btn px-2 py-1 rounded-md text-[11px] font-semibold bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30 transition-all" title="Thank you for contacting Amazon Flex. have a good day! I wish you have a great smile through out the day.">
+        😊 Great Smile
+      </button>
+    </div>
+
+    <!-- Right: Search + Density + Theme + Copied today -->
+    <div class="flex items-center gap-2 flex-wrap">
+      <div class="relative w-52 sm:w-60">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search chat script, topic ('/')..."
+          class="w-full pl-7 pr-6 py-1 text-xs rounded-lg bg-slate-100 dark:bg-slate-800/90 border border-slate-300 dark:border-slate-700 focus:outline-none focus:border-blue-500 text-slate-900 dark:text-slate-100 placeholder-slate-400"
+        />
+        <svg class="w-3.5 h-3.5 absolute left-2 top-1.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+        <button type="button" id="clearSearchBtn" class="hidden absolute right-1.5 top-1 text-slate-400 hover:text-slate-200 text-xs px-1">✕</button>
+      </div>
+
+      <button type="button" id="densityBtn" class="px-2 py-1 rounded-lg text-[11px] font-medium border border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 hover:border-blue-500 transition-all" title="Toggle between 1-Page 24-inch FHD fit and Comfortable spacing">
+        🖥️ 1-Page FHD
+      </button>
+
+      <button type="button" id="copyHtmlSourceBtn" class="px-2 py-1 rounded-lg text-[11px] font-semibold border border-emerald-500/40 bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-500/25 transition-all" title="Copy the complete HTML source code of this page">
+        📋 Copy HTML Code
+      </button>
+
+      <div class="flex items-center rounded-lg border border-slate-300 dark:border-slate-700 overflow-hidden bg-slate-100 dark:bg-slate-800 p-0.5 gap-0.5">
+        <button type="button" data-theme="dark" class="theme-btn px-2 py-0.5 rounded text-[11px] font-medium bg-blue-600 text-white" title="Low-Glare Dark Mode">🌙 Dark</button>
+        <button type="button" data-theme="light" class="theme-btn px-2 py-0.5 rounded text-[11px] font-medium hover:bg-slate-200 dark:hover:bg-slate-700" title="Daylight Mode">☀️ Light</button>
+        <button type="button" data-theme="sepia" class="theme-btn px-2 py-0.5 rounded text-[11px] font-medium hover:bg-slate-200 dark:hover:bg-slate-700" title="Warm 8-Hour Eye-Care Mode">☕ Eye-Care</button>
+      </div>
+
+      <!-- Right: Compact "Copied today" Counter -->
+      <div class="shrink-0 flex items-center pl-2 xl:border-l border-slate-300 dark:border-slate-700/80">
+        <div class="px-2 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-[11px] font-medium flex items-center gap-1.5">
+          <span class="text-slate-600 dark:text-slate-400">Copied today:</span>
+          <strong id="copyCounter" class="text-emerald-600 dark:text-emerald-400 font-semibold text-[11px]">0</strong>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- BAR 2: STANDINGS 1-CLICK BAR + 3 LIVE AUTO-FILL INPUTS -->
+  <section class="app-subbar px-3.5 py-3 z-10">
+    <div class="flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-5">
+      
+      <!-- Left: 1-Click Chat Standings Scripts ("Your Account is active and Your Standings is ...") -->
+      <div class="flex items-center gap-1.5 flex-wrap pr-2.5 xl:border-r border-slate-300 dark:border-slate-700/80 shrink-0">
+        <span class="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400" title="Copies: Your Account is active and Your Standings is [Standing].">
+          Standings:
+        </span>
+        <button type="button" data-standing="Fantastic" class="standing-copy-btn px-2.5 py-1 rounded-md font-semibold text-[11px] bg-emerald-500/15 text-emerald-600 dark:text-emerald-300 border border-emerald-500/30 hover:bg-emerald-500/25 transition-all shadow-2xs">
+          🌟 Fantastic
+        </button>
+        <button type="button" data-standing="Great" class="standing-copy-btn px-2.5 py-1 rounded-md font-semibold text-[11px] bg-blue-500/15 text-blue-600 dark:text-blue-300 border border-blue-500/30 hover:bg-blue-500/25 transition-all shadow-2xs">
+          👍 Great
+        </button>
+        <button type="button" data-standing="Fair" class="standing-copy-btn px-2.5 py-1 rounded-md font-semibold text-[11px] bg-amber-500/15 text-amber-600 dark:text-amber-300 border border-amber-500/30 hover:bg-amber-500/25 transition-all shadow-2xs">
+          ⚖️ Fair
+        </button>
+        <button type="button" data-standing="At Risk" class="standing-copy-btn px-2.5 py-1 rounded-md font-semibold text-[11px] bg-rose-500/15 text-rose-600 dark:text-rose-300 border border-rose-500/30 hover:bg-rose-500/25 transition-all shadow-2xs">
+          ⚠️ At Risk
+        </button>
+      </div>
+
+      <!-- Center: 3 Wide Live Auto-Fill Controls -->
+      <div class="flex-1 grid grid-cols-1 md:grid-cols-12 gap-5 items-center">
+        <!-- 1. Agent / DP Name ([NAME]) -->
+        <div class="md:col-span-3 flex flex-col">
+          <div class="flex items-center justify-between gap-1 mb-0.5">
+            <label for="tokenNameInput" class="text-[9.5px] font-bold uppercase tracking-wider text-blue-500 dark:text-blue-400">1. Agent / DP Name</label>
+            <div class="flex items-center gap-0.5">
+              <button type="button" data-agent="Afroz" class="agent-preset-btn px-1.5 py-0.2 rounded text-[9px] font-semibold bg-blue-500/20 text-blue-600 dark:text-blue-300 border border-blue-500/30" title="Set greeting agent to Afroz">Afroz</button>
+              <button type="button" data-agent="Sameera" class="agent-preset-btn px-1.5 py-0.2 rounded text-[9px] font-semibold bg-slate-200 dark:bg-slate-700/80 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-600" title="Set greeting agent to Sameera">Sameera</button>
+              <button type="button" data-agent="Sana" class="agent-preset-btn px-1.5 py-0.2 rounded text-[9px] font-semibold bg-slate-200 dark:bg-slate-700/80 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-600" title="Set greeting agent to Sana">Sana</button>
+              <button type="button" data-agent="Saniya" class="agent-preset-btn px-1.5 py-0.2 rounded text-[9px] font-semibold bg-slate-200 dark:bg-slate-700/80 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-600" title="Set greeting agent to Saniya">Saniya</button>
+            </div>
+          </div>
+          <input
+            type="text"
+            id="tokenNameInput"
+            placeholder="DP Name for [NAME] or custom Agent..."
+            class="autofill-input w-full px-2.5 py-1 text-xs rounded-md font-mono"
+          />
+        </div>
+
+        <!-- 2. Block / Contact Date (October 20, 2026) -->
+        <div class="md:col-span-5 flex flex-col">
+          <div class="flex items-center justify-between gap-1 mb-0.5">
+            <label for="tokenDateInput" class="text-[9.5px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">2. Block / Chat Date (October 20, 2026)</label>
+            <div class="flex items-center gap-1">
+              <button type="button" id="fillTodayBtn" class="px-1.5 py-0.2 rounded text-[9.5px] font-semibold bg-emerald-500/20 hover:bg-emerald-500/35 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30 transition-all" title="Set Today's Date">⚡ Today</button>
+              <button type="button" id="fillYesterdayBtn" class="px-1.5 py-0.2 rounded text-[9.5px] font-semibold bg-slate-200 dark:bg-slate-700/80 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-600 transition-all" title="Set Yesterday's Date">Yesterday</button>
+              <button type="button" id="copyDateOnlyBtn" class="px-1.5 py-0.2 rounded text-[9.5px] font-semibold bg-blue-500/20 hover:bg-blue-500/35 text-blue-700 dark:text-blue-300 border border-blue-500/30 transition-all" title="Copy formatted date">📋 Copy Date</button>
+            </div>
+          </div>
+          <!-- 2.1 Date Picker -->
+          <div class="flex items-center gap-1">
+            <input
+              type="text"
+              id="tokenDateInput"
+              placeholder="October 20, 2026"
+              class="autofill-input flex-1 px-2.5 py-1 text-xs rounded-md font-mono"
+            />
+
+            <div class="relative flex items-center justify-center">
+              <input
+                type="date"
+                id="nativeDatePicker"
+                class="autofill-input absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
+                title="Pick date from calendar"
+              />
+              <button
+                type="button"
+                id="openDatePickerBtn"
+                class="autofill-input px-1.5 py-0.5 text-sm rounded-md cursor-pointer"
+                title="Pick date from calendar"
+                aria-label="Pick date from calendar"
+              >📅</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Issue / Problem / Status Notes -->
+        <div class="md:col-span-4 flex flex-col">
+          <div class="flex items-center justify-between mb-0.5">
+            <label for="tokenIssueInput" class="text-[9.5px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">3. Issue / [Problem] / [Status] Auto-Fill</label>
+            <button type="button" id="clearTokensBtn" class="px-1.5 py-0.2 rounded text-[9.5px] font-semibold bg-rose-500/15 hover:bg-rose-500/30 text-rose-600 dark:text-rose-300 border border-rose-500/30 transition-all" title="Clear all auto-fill fields">✕ Clear All</button>
+          </div>
+          <input
+            type="text"
+            id="tokenIssueInput"
+            placeholder="Fills [do this], [Problem], [ISSUE], [Solution]..."
+            class="autofill-input w-full px-2.5 py-1 text-xs rounded-md font-mono"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN 1-PAGE BENTO MATRIX (6 COLUMNS ON 24" FULL HD 1920x1080 THINKCENTRE) -->
+  <main class="flex-1 px-3.5 py-2.5 overflow-y-auto">
+    <div id="matrixContainer">
+      <!-- Populated dynamically by JS -->
+    </div>
+  </main>
+
+  <!-- FLOATING STANDINGS MINI-POPOVER -->
+  <div id="standingsPopover" class="hidden fixed z-50 bg-slate-900 text-white border border-amber-500/50 rounded-xl shadow-2xl p-2.5 w-64">
+    <div class="flex items-center justify-between pb-1.5 mb-2 border-b border-slate-700 text-xs font-semibold text-amber-300">
+      <span>⚡ Select Chat Standing Script</span>
+      <button type="button" id="closePopoverBtn" class="text-slate-400 hover:text-white px-1">✕</button>
+    </div>
+    <div class="grid grid-cols-2 gap-1.5">
+      <button type="button" data-pop-standing="Fantastic" class="pop-standing-btn px-2.5 py-1.5 rounded-lg bg-emerald-600/30 hover:bg-emerald-600/50 border border-emerald-500/40 text-xs font-semibold text-emerald-200 text-left">🌟 Fantastic</button>
+      <button type="button" data-pop-standing="Great" class="pop-standing-btn px-2.5 py-1.5 rounded-lg bg-blue-600/30 hover:bg-blue-600/50 border border-blue-500/40 text-xs font-semibold text-blue-200 text-left">👍 Great</button>
+      <button type="button" data-pop-standing="Fair" class="pop-standing-btn px-2.5 py-1.5 rounded-lg bg-amber-600/30 hover:bg-amber-600/50 border border-amber-500/40 text-xs font-semibold text-amber-200 text-left">⚖️ Fair</button>
+      <button type="button" data-pop-standing="At Risk" class="pop-standing-btn px-2.5 py-1.5 rounded-lg bg-rose-600/30 hover:bg-rose-600/50 border border-rose-500/40 text-xs font-semibold text-rose-200 text-left">⚠️ At Risk</button>
+    </div>
+  </div>
+
+  <!-- SLIDE-OVER INSPECTOR & LIVE EDITOR MODAL -->
+  <div id="inspectorModal" class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] flex flex-col overflow-hidden">
+      <div class="px-5 py-3.5 bg-slate-100 dark:bg-slate-800/90 border-b border-slate-300 dark:border-slate-700 flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <span id="inspStatusBadge" class="px-2 py-0.5 rounded text-xs font-bold uppercase">Flow</span>
+          <h3 id="inspTitle" class="font-bold text-sm text-slate-900 dark:text-slate-100">Chat Script</h3>
+        </div>
+        <button type="button" id="closeInspectorBtn" class="px-3 py-1 rounded-lg bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-xs font-semibold">Esc / Close ✕</button>
+      </div>
+
+      <div class="p-5 overflow-y-auto grid grid-cols-1 md:grid-cols-2 gap-5 flex-1">
+        <div class="flex flex-col">
+          <div class="flex items-center justify-between mb-2">
+            <label for="inspPrimaryTextarea" class="text-xs font-bold uppercase tracking-wider text-blue-500">💬 Primary Chat Script (Editable before copy)</label>
+            <button type="button" id="inspCopyPrimaryBtn" class="px-3 py-1 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold shadow-xs">Copy Primary Script</button>
+          </div>
+          <textarea id="inspPrimaryTextarea" rows="16" class="w-full flex-1 font-sans text-xs p-3.5 rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-100 focus:outline-none focus:border-blue-500 resize-none leading-relaxed"></textarea>
+        </div>
+
+        <div class="flex flex-col">
+          <div class="flex items-center justify-between mb-2">
+            <label for="inspAltTextarea" class="text-xs font-bold uppercase tracking-wider text-emerald-500">⚡ Alternate Variant / Follow-Up / SLS Code</label>
+            <button type="button" id="inspCopyAltBtn" class="px-3 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold shadow-xs">Copy Alternate</button>
+          </div>
+          <textarea id="inspAltTextarea" rows="12" class="w-full flex-1 font-sans text-xs p-3.5 rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-slate-100 focus:outline-none focus:border-emerald-500 resize-none leading-relaxed"></textarea>
+          <div class="mt-3 p-3 rounded-lg bg-slate-100 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700/80 flex items-center justify-between">
+            <span class="text-xs font-medium text-slate-500 dark:text-slate-400">Need both combined?</span>
+            <button type="button" id="inspCopyBothBtn" class="px-3 py-1.5 rounded-lg bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-800 dark:text-slate-100 border border-slate-300 dark:border-slate-600 text-xs font-semibold">⚡ Copy Primary + Alternate</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="copyToast" class="fixed bottom-4 right-4 z-50 transform translate-y-20 opacity-0 transition-all duration-200 pointer-events-none bg-slate-900/95 text-white border border-emerald-500/50 rounded-xl shadow-2xl px-4 py-2.5 flex items-center gap-3 max-w-md">
+    <div class="w-7 h-7 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 font-bold text-sm">✓</div>
+    <div class="text-xs">
+      <div id="toastTitle" class="font-bold text-emerald-300">Copied Chat Script!</div>
+      <div id="toastSubtitle" class="text-slate-300 font-mono text-[11px] truncate max-w-xs">Greeting — Afroz</div>
+    </div>
+  </div>
+
+  <script>
+    const RAW_DATA = {"standings":{"Fantastic":"Your Account is active and Your Standings is Fantastic.","Great":"Your Account is active and Your Standings is Great.","Fair":"Your Account is active and Your Standings is Fair.","At Risk":"Your Account is active and Your Standings is At Risk."},"greetings_by_agent":{"Afroz":"Thank you for contacting Amazon Flex Support. My name is Afroz. I will be assisting you today.","Sameera":"Thank you for contacting Amazon Flex Support. My name is Sameera. I will be assisting you today.","Sana":"Thank you for contacting Amazon Flex Support. My name is Sana and I will be assisting you today.","Saniya":"Thank you for contacting Amazon Flex Support. My name is Saniya. I will be assisting you today."},"quick_refs":[{"id":"qref_pay_queue","label":"Offroad Payments Chat Queue","value":"US Flex DP Offroad Payments English Chat","note":"Transfer target queue for Offroad Payment inquiries in chat","type":"copy"},{"id":"qref_support_email","label":"Flex Support Email (Photo / Video)","value":"amazonflex-support@amazon.com","note":"Share with DP to send photos or videos","type":"copy"},{"id":"qref_faq_url","label":"Amazon Flex FAQ Link","value":"https://flex.amazon.com/faq","note":"Scheduling & general FAQ link","type":"copy"},{"id":"qref_sls_transcript","label":"SLS Code: Chat Transcript Email","value":"amazon_flex_support_chat_transcript","note":"SLS template identifier for chat transcript follow-up","type":"copy"},{"id":"qref_sls_dropped","label":"SLS Code: Chat Dropped Acknowledgment","value":"amazon_flex_chat_dropped_acknowledgment","note":"SLS template identifier for dropped chat follow-up","type":"copy"},{"id":"qref_river_pay","label":"RIVER Workflow: Pay Form Submission","value":"https://river.amazon.com/HYD20/workflows?buildingType=SDSInternal&workflowId=undefined&q0=481050d5-8eba-418a-bc42-34661be31315&q1=c899a4ed-ec42-41ad-92d4-cb9bd8ec040d&q2=fdbf4cb1-0ad9-4351-8391-3ced4d6adb18&q3=c0d43089-06c3-4399-ac48-24aa638eaaa8&id=c0d43089-06c3-4399-ac48-24aa638eaaa8","note":"Direct HYD20 RIVER workflow link for Pay Form","type":"link"},{"id":"qref_river_esc","label":"RIVER Workflow: Escalation (2-3 Days)","value":"https://river.amazon.com/HYD20/workflows?buildingType=SDSInternal&q0=481050d5-8eba-418a-bc42-34661be31315&q1=c899a4ed-ec42-41ad-92d4-cb9bd8ec040d&q2=fdbf4cb1-0ad9-4351-8391-3ced4d6adb18&q3=987263d4-57f2-490e-b08a-4ea96080943a&id=987263d4-57f2-490e-b08a-4ea96080943a","note":"Direct HYD20 RIVER workflow link for Escalations","type":"link"}],"cats":[["Flow","Greetings","1. Greetings & Opening"],["Flow","More Info","2. More Info & Probing"],["Flow","Wait & Hold","3. Wait, Hold & Parked Chats"],["Flow","Idle & Park","4. Idle Timer & Park Scripts"],["Flow","End & Closing","5. End Chat & Closings"],["Flow","Warnings","6. Abusive & Chat Warnings"],["Appeals","Actions & LHE","7. Actions & LHE Exemptions"],["Appeals","Repeat Denied","8. Repeat Denied Responses"],["Appeals","Offers","9. Offers & Account Standing"],["RegionApp","Cancel Block","10. Cancel Block Guidelines"],["RegionApp","Region Change","11. Region Change & Close Account"],["RegionApp","BGC, Waitlist & App","12. BGC, Waitlist & App Issues"],["Transfers","Transfers","13. Transfers & Specialist Queues"],["Transfers","Follow-Up Emails","14. Disconnected & Transcript Emails"],["Transcript","Transcript Empathy","15. Transcript Pro • Empathy & Apologies"],["Transcript","Transcript Probing & Closing","16. Transcript Pro • Probing & Closings"]],"rows":[["chat_greet_afroz",0,"Greeting — Afroz (Default)","emerald","Thank you for contacting Amazon Flex Support. My name is Afroz. I will be assisting you today.","Hi, I am Afroz. How may I assist you today?","Short Greeting"],["chat_greet_sameera",0,"Greeting — Sameera","emerald","Thank you for contacting Amazon Flex Support. My name is Sameera. I will be assisting you today."],["chat_greet_sana",0,"Greeting — Sana","emerald","Thank you for contacting Amazon Flex Support. My name is Sana and I will be assisting you today."],["chat_greet_saniya",0,"Greeting — Saniya","emerald","Thank you for contacting Amazon Flex Support. My name is Saniya. I will be assisting you today."],["chat_greet_generic",0,"Opening — How May I Assist","sky","Thank you for contacting Amazon Flex Support. how may I assist you today","Hi, I am Afroz. I am here to help you.","Direct Intro"],["chat_greet_disconnected",0,"Reconnect — Pick Up Previous Chat","amber","Hello, My name is Afroz. I'm sorry your previous chat disconnected. I will try and pick up where you left off.","Are we connected?","Check Conn."],["chat_info_paraphrase",1,"Paraphrasing ([do this])","sky","If my understanding is correct, you're looking for a way to [do this]?","Let me just make sure I understand you right. You'd like to [rephrase the customer's question]. Is that accurate?","Alt Rephrase"],["chat_info_general",1,"More Info — Provide Details","amber","I wasn't able to determine the issue from the information provided. To assist us in investigating, could you please provide more details about the issue?","can you please elaborate the issue","Short Ask"],["chat_info_datetime1",1,"Ask Block Date & Time (1-Line)","amber","To assist me in investigating, could you please provide me with the date and time of the block the issue occurred?","To help you with your query, could you help me with the time of this block?","Ask Time Only"],["chat_info_datetime2",1,"Ask Block Date / Time / Issue (Form)","amber","I need these information to help you. please reply with specific information for each block or issue you are contacting about.\n\nBlock date: \nBlock time: \nThe issue you encountered:"],["chat_info_mismatch",1,"Details Don't Match Records","rose","The details mentioned below don’t match our records, could you please provide correct details about the issue, including the date and time of the block."],["chat_wait_verify",2,"Verify Info (Allow a Moment)","sky","Thank you for the information, allow me a moment while I verify this information on my end.","Please give me a moment while I check","Short Check"],["chat_wait_2m_inv",2,"2 Mins — Investigate Issue","amber","please allow me 2 minutes to investigate the issue","Allow me 2 minutes to read the chat.","2m Read Chat"],["chat_wait_2m_stay",2,"2 Mins — Stay Connected (Research)","amber","Could you please stay connected for two minutes while I research this for you?","Please wait for a minute while I research this issue for you. Stay online and leave this chat window open. Is that ok?","Keep Window Open"],["chat_wait_parked",2,"Parked Chat — Review Previous Conv.","sky","Please allow me a moment to review your previous conversation to ensure continuity in support.","please allow me to read previous chat.","Short Read"],["chat_wait_apology_standings",2,"Apology — Impacting Standings","emerald","Thank you for bringing this to my attention. I'm so sorry this issue is impacting your standings. Let me go ahead and check this one for you"],["chat_idle_1st",3,"1. 2 Min Idle — 1st Warning Msg","amber","I don't mean to rush you, but we've been idle for 2 minutes. I want to make sure our chat's still connected. If you aren't able to respond in 2 minutes, this chat will close."],["chat_idle_last",3,"2. 2 Min Idle — Last Warning Msg","amber","This chat has been idle for two minutes. I may close this chat after two more minutes. If it isn't convenient for you to reply to me at the moment, please contact us again later."],["chat_idle_closing",3,"3. Idle Close — Can't See Messages","rose","I'm afraid I can't see your messages in the chat box. Thank you for contacting us. Feel free to come back at any time.","I'm afraid I can't see your messages in the chat box. If it isn't convenient for you to reply to me at the moment Feel free to come back at any time.Thank you for contacting us.","Longer Variant"],["chat_idle_resolved_close",3,"4. Idle 2m + Resolved — Close Chat","rose","The chat has been idle for 2 mins .Considering the issue is resolved .i will now close this chat . Feel free to come back at any time.","Considering the issue is resolved, and you have no further issues, I have closed the conversation.","Resolved Close"],["chat_idle_notes",3,"Internal Note: DP Away / Transferred","sky","dp is away and idle. Dp is not responding.","dp is transferred","DP Transferred"],["chat_end_anything_else",4,"Anything Else Today?","emerald","Is there anything else I may assist you with today?","Anything else to make your day even better?","Warm Variant"],["chat_end_smile",4,"End — Great Smile Throughout Day","emerald","Thank you for contacting Amazon Flex. have a good day! I wish you have a great smile through out the day.","Thank you for contacting Amazon Flex. have a good day! I wish you have a great smile through out the day as well.","Alt Smile"],["chat_end_no_further",4,"No Further Help — End Chat","emerald","Since, there is no other help required. Please allow me to end this chat. It was a pleasure assisting you with this, Thanks for contacting Amazon.","I have provided resolution from my end. I have to disconnect the chat and if you have any query means feel free to reach support anytime and thanks for contacting support. Have a great day.","Resolution Disconnect"],["chat_end_feedback",4,"Ask Feedback (Survey / Close)","emerald","It was a pleasure assisting you. Thanks for being part of this feature. You’ll receive a survey from Amazon shortly and would love to hear your feedback on this feature! Looking forward to support you in the future!","Thank you again for contacting us and contributing to the success of Amazon Flex.","Short Thanks"],["chat_end_closeout",4,"Close Out — No Action Needed","sky","Thank you for providing additional information to us. No action is needed from you at this time.","no further actions are needed from your end","Short Stop"],["chat_end_rude",4,"Rude / Repeat — Already Provided Info","rose","I have already provided you with all the information","At this point, I need to end this chat.","Force End"],["chat_warn_1",5,"Abusive Warning 1 (Refrain)","amber","I'll help you with this issue but please refrain from using any inappropriate language."],["chat_warn_2",5,"Abusive Warning 2 (Final Warning)","rose","I can see you're upset. I can assure you that I'm here to help and I'll do everything possible to resolve this issue. But if you continue to use inappropriate language I'll have to end this chat.","At this point, I need to end this chat.","End Now"],["chat_act_submit_form",6,"Submit Form (Wait 2 Mins)","amber","I'll need to submit a form to the right team to help you out. Would you mind waiting a couple of minutes while I explain the situation?","Thanks for reaching out! I'll need to submit a form to the right team to help you out. Would you mind waiting a couple of minutes while I explain the situation?","With Thanks"],["chat_act_low_sev_tt",6,"Raised Low Sev TT (Investigating)","amber","I've passed your information along to the appropriate team and they are investigating the issue. We'll let you know when we have more information.","I apologize for the delay in resolving your question. We are still investigating and will provide an update to you as soon as possible. Most delivery partners will receive a response within six (6) days.","2nd Ack (6d)"],["chat_act_grant_lhe",6,"Grant LHE (Exception Accepted)","emerald","Sorry to hear about the situation. I understand things happen from time to time that may impact your blocks.\n\nI also understand that it was an extenuating circumstance beyond your control. As a result, I'll make an exception and remove it from your delivery history this time.\n\nI am not able to do it every time, but I know you have goals and I want to help you get there."],["chat_act_denied_lhe",6,"Denied LHE (Multiple Past Exceptions)","rose","We're sorry to hear about your situation and understand sometimes things happen.\n\nAfter reviewing your account, we see that we've already made multiple exceptions in the past when you couldn't deliver during a scheduled block due to personal circumstances.\n\nAs a result this instance will remain in your delivery history. However, your eligibility to deliver with Amazon Flex will be impacted only if it continues to happen repeatedly."],["chat_act_repeat_exempt1",6,"Repeat Exempt 1 (Outside Control)","emerald","Thank you for sharing this information. I reviewed the information and see that the situation was outside of your control. This instance will be removed from your delivery history. Thank you for your patience"],["chat_act_repeat_exempt2",6,"Repeat Exempt 2 ([DATE] — 24h Update)","emerald","I found that one or more of the delivery issues impacting your block on [DATE] were beyond your control. This issue has been removed from your delivery history. It may take 24 hours to be reflected in your Standing Details.\n\nPlease know that removing this particular issue from your account is only one part of your delivery history. So, it may not improve your overall standing."],["chat_rep_denied1",7,"Repeat Denied 1 (Block on [DATE/TIME])","rose","Thank you for sharing this information about your block on [DATE/TIME].\n\nAfter further review, our original decision hasn't changed. As a result, this instance will be included in your delivery history."],["chat_rep_denied2",7,"Repeat Denied 2 (Decision Unchanged)","rose","Thank you for sharing this information. I reviewed these details along with your delivery history and our original decision hasn't changed."],["chat_rep_denied3",7,"Repeat Denied 3 (Consider Many Things)","amber","We understand that sometimes things happen and we do consider many things when reviewing your delivery history."],["chat_off_account_info",8,"Account Active & Standing Is...","emerald","Your Account is active and Your Standings is ","SEND_STANDINGS","⚡ Standings"],["chat_off_extra",8,"Extra — Not Many Offers in Area","amber","after further investigation I found that there are not many offers in your area","upon checking my resources,i can see that you are assigned to a operational service area and you shall receive offers ","Operational Area"],["chat_off_1",8,"Offers 1 — Demand & Refresh Often","sky","Offer availability is dependent on customer demand, may fluctuate week to week, and isn’t guaranteed. If you would like to work more blocks, we encourage you to check the Amazon Flex app often. Offers become available throughout the day and can be found on the Offers page. You may need to select the Refresh button on the Offers page periodically to make sure you see the latest available offers."],["chat_off_2",8,"Offers 2 — Customer Demand (Short)","sky","The amount of work available to all Amazon Flex delivery partners depends on customer demand and changes week to week. You can see available work by going to the \"Offers\" page in the Amazon Flex app. When you’re on the page, select 'Refresh' to see the latest offers.","We add offers every day and at multiple times during the day. If you don't see any offers at the moment, check back in a few hours.","Check Back Later"],["chat_off_3",8,"Offers 3 — 4 Factors Bullet List","sky","Each delivery partner sees different offers. The offers you see may depend on the following:\n\n\nThe amount of work you've done recently\nThe work you've reserved in the future\nWhether you've cancelled lots of work\nYour Delivery Quality, and your Reliability.","We appreciate that you took time to write to us. The offers that are available to you at any given time are based on factors such as: Customer demand, your scheduled hours, your delivery history, and whether your vehicle qualifies for the available routes.\n\nGiven these factors, not all offers will be visible to all delivery partners at the same time.","Repeat / Factors"],["chat_can_guidelines",9,"1. Timing Guidelines (45m / 90s)","sky","If you need to cancel a delivery block, please follow the timing guidelines below based on your block type:\n\n1. AMZL and SSD scheduled-ahead blocks. You must forfeit the block at least 45 minutes before the start time in the app. Otherwise, it will be considered a missed block.\n2. Amazon Now Instant Offers: Forfeit in the app at least 90 seconds before the block start time."],["chat_can_howto",9,"2. How to Forfeit (5-Min Grace + Steps)","sky","If you need to cancel an AMZL or SSD block within 45 minutes of its start time, you'll have a 5-minute grace period to forfeit without penalty. This forfeiture won't count as a missed delivery block.\n\nTo forfeit an accepted block:\n\n1. In the Amazon Flex app, select the Menu icon and then select Calendar.\n\n2. Select a day to view additional details, and then select the block you want to forfeit.\n\n3. Select Forfeit This Time and then swipe to confirm.\n\nFor more information on scheduling delivery blocks and preferred scheduling, refer to https://flex.amazon.com/faq."],["chat_can_blurb",9,"3. Full Cancel Block Blurb (Combined)","emerald","Hello,\n\nIf you need to cancel a delivery block, please follow the timing guidelines below based on your block type:\n\n1. AMZL and SSD scheduled-ahead blocks. You must forfeit the block at least 45 minutes before the start time in the app. Otherwise, it will be considered a missed block.\n2. Amazon Now Instant Offers: Forfeit in the app at least 90 seconds before the block start time.\n\n\n\nIf you need to cancel an AMZL or SSD block within 45 minutes of its start time, you'll have a 5-minute grace period to forfeit without penalty. This forfeiture won't count as a missed delivery block.\n\nTo forfeit an accepted block:\n\n1. In the Amazon Flex app, select the Menu icon and then select Calendar.\n\n2. Select a day to view additional details, and then select the block you want to forfeit.\n\n3. Select Forfeit This Time and then swipe to confirm.\n\nFor more information on scheduling delivery blocks and preferred scheduling, refer to https://flex.amazon.com/faq.\n\n\n\nThe Amazon Flex Team."],["chat_reg_level2",10,"1. Level 2+ Transfer (Every 7 Days)","sky","If your Rewards Tier status is Level 2 or higher, you can transfer to a new region once every 7 days. It applies if there are available opportunities within the region. To check if there are available opportunities in your desired region, navigate to Settings in the Amazon Flex app: Personal Information > Region > Request region change > Enter your preferred Zip Code > Continue."],["chat_reg_close1",10,"2. Close Existing Account for New Region","amber","If you still wish to change your region, we have to close your existing account so you can create a new account with a different email address in the region of your choice.","May I proceed to send you the Email request to close your account?","Ask Permission"],["chat_reg_close2",10,"3. Close Account 2 (Combined Prompt)","amber","If you wish to create a new account to sign up in the new region, may I proceed to send you the Email request to close your account?"],["chat_reg_thanks",10,"4. Thanks for Confirming (Interest List)","emerald","Thanks for confirming. Please note, if the area requested isn’t recruiting, you may join the interest list. You will receive an email confirmation from us once your account has been closed"],["chat_reg_not_eligible",10,"5. Not Eligible for Region (Policy Limit)","rose","I would love to help you. However I hope you understand our limitation and situation on our end as we are bounded to the policy and we are just explaining what can be done on our end as per policy. This is common procedure for all our drivers.As much as I would love to help you with this however this is beyond my scope and we also have limitations regarding this."],["chat_bgc_progress",11,"BGC Information in Progress","amber","I see that your Background Check Information is in progress"],["chat_waitlist_added",11,"Waitlisted — Interest List Info","sky","You have been added to the interest list for the region that you selected. Wait times vary by location, and Amazon can't provide estimates. Amazon will notify you via email when delivery opportunities become available in your region. Until then, there's no action needed from you.\n\nKeep a lookout for the email as spaces fill up fast. And it's important to return to the app to remove from the interest list after we email you."],["chat_zip_90d",11,"Zip Code Change (Every 90 Days)","sky","Changing your Zip Code can only be completed every 90 days and doesn't guarantee delivery opportunities."],["chat_app_logout",11,"App Issue — Sign Out / Sign In Steps","sky","I'm sorry to hear that you are experiencing issues with the Amazon Flex app.\n\nHave you tried logging out and logging back into the app? We have noticed that this solves the most common issues.\nTo sign out of the Amazon Flex app:\n\n1. Tap the Main Menu icon.\n2. Tap \"Settings.\"\n3. Tap \"Sign out\" at the bottom of the screen.\n\nOnce you are signed out, to sign back in just click the \"Sign in with Amazon\" button and log in.","Have you tried logging out and back into your app to see if that fixes the issue?","Short Ask"],["chat_app_apology_short",11,"App Issue — Short Apology","amber","I'm sorry to hear that you are experiencing issues with the Amazon Flex","i understand the issue but for such cases please contact our on-road support immediately when you face any issue while delivering the item and they will help you with this right away so that you can avoid any defect affecting your standings.","Call On-Road"],["chat_neg_feedback",11,"Negative Experience / Program Feedback","sky","We are sorry to hear that you have had a negative experience with Amazon Flex. We want to provide an exceptional experience for Amazon Flex delivery partners and greatly value feedback from our delivery partners. \n\nWe appreciate that you took the time to write to us, and we've passed your feedback along to the appropriate team for review."],["chat_tr_right_team",12,"Connect to Right Team (Moment)","sky","please allow me moment to connect you to the right team","in this case i will quickly transfer this chat to relevant specialist team who will assist you further .","Specialist"],["chat_tr_onroad",12,"Transfer — On-Road Support","amber","I understand that you're contacting us about an On-Road issue. I'm going to transfer this chat to someone who is able to help you with this issue."],["chat_tr_pay_hold",12,"Transfer — Payment (Do You Mind Holding?)","emerald","I understand that you’re contacting us about a Payment issue. I'm going to transfer you to someone who is able to help you with this issue. Do you mind holding for a moment while I find another individual to support you?","I see you have a payment issue. I will transfer you to a specialist who can help. Please hold for a moment.","Direct Hold"],["chat_tr_pay_ask",12,"Transfer — Payment (May I Go Ahead?)","emerald","Regarding your payment, I need to transfer you to our payments team. May I go ahead with the transfer?","app issue check-in pending review, please investigate pay","Pay Note"],["chat_tr_pay_form",12,"Pay Form (Wait 2m + RIVER Link)","amber","I'll need to submit a form to the right team to help you out. Would you mind waiting a couple of minutes while I explain the situation?","","","https://river.amazon.com/HYD20/workflows?buildingType=SDSInternal&workflowId=undefined&q0=481050d5-8eba-418a-bc42-34661be31315&q1=c899a4ed-ec42-41ad-92d4-cb9bd8ec040d&q2=fdbf4cb1-0ad9-4351-8391-3ced4d6adb18&q3=c0d43089-06c3-4399-ac48-24aa638eaaa8&id=c0d43089-06c3-4399-ac48-24aa638eaaa8"],["chat_tr_escalation",12,"Escalation (2–3 Days + RIVER Link)","rose","I understand that these concerns aren't easy for you, and we want to be able to resolve your concerns. I've passed your information along to the appropriate team for further investigation. You'll get a response with further guidance in 2-3 business days.","Looks like our escalation team handled this use case on [DATE]. I am going to pass this case to our escalations team and they will get back to you within 24 hours.","24h Escalation","https://river.amazon.com/HYD20/workflows?buildingType=SDSInternal&q0=481050d5-8eba-418a-bc42-34661be31315&q1=c899a4ed-ec42-41ad-92d4-cb9bd8ec040d&q2=fdbf4cb1-0ad9-4351-8391-3ced4d6adb18&q3=987263d4-57f2-490e-b08a-4ea96080943a&id=987263d4-57f2-490e-b08a-4ea96080943a"],["chat_tr_forwarded",12,"Forwarded to Concerned Team","sky","I have forwarded your query to the concerned team, they will reach out to with the appropriate resolution","I’ve forwarded this situation to the relevant team to investigate it further.","Short Fwd"],["chat_tr_photo",12,"Share Photo / Video via Email","sky","You can send a photo or video to: amazonflex-support@amazon.com please"],["chat_tr_spanish",12,"Spanish / Language Request","amber","I ́m sorry, I dont understand spanish, please contact us via flex app through phone call so we can transfer you to our spanish department.","Thank you for contacting support. At this time, we don't offer Spanish or other languages for our Amazon Flex Chat support. I would like to help you resolve this chat in English if at all possible. If you have anyone with you that is available to help you continue in English, please ask them for assistance.","English Chat Only"],["chat_em_blank",13,"Blank Contact (No Info Gathered)","amber","Hello,\n\nI am writing to you because we got disconnected during our chat on [DATE].\n\nI wasn't able to collect enough information to address your question. I apologize for the inconvenience.\n\nPlease feel free to contact Support again so we can help you.\n\nFor faster access to Support, try live chat or talk to us by signing in to the Amazon Flex app and going to the Main Menu > Help > Contact us.","amazon_flex_chat_dropped_acknowledgment","Copy SLS Code"],["chat_em_dropped_summary",13,"Chat Dropped (With Issue & Status)","sky","Hello,\n\nI am writing to you because we got disconnected during our chat on [DATE] about [ISSUE].\n\nI understand that you needed to know about [summary of issue]. The current status of the issue is [current status].\n\nPlease feel free to contact Support again so we can help you.\n\nFor faster access to Support, try live chat or talk to us by signing in to the Amazon Flex app and going to the Main Menu > Help > Contact us.","Hello [NAME],\nI am writing to you because we got disconnected during our chat on [DATE] about [ISSUE].\n[IN CASE YOU HAVE ENOUGH INFORMATION]:\nI understand that you needed to know about [summary of issue]. The current status of the issue is [current status].\n[IN CASE YOU HAVE NOT GATHERED ANY INFORMATION]:\nI wasn't able to collect enough information to address your question. I apologize for the inconvenience.\nPlease feel free to contact Support again so we can help you.\nFor faster access to Support, try live chat or talk to us by signing in to the Amazon Flex app and going to the Main Menu > Help > Contact us.","Full SLS Dual"],["chat_em_transcript",13,"Chat Transcript Follow-Up Email","emerald","Hello [NAME],\n\nIt is a follow-up email for a recent chat conversation with Amazon Flex support. Here’s the chat transcript for your contact on [DATE].\n\n[COPY AND PASTE THE TRANSCRIPT]\n\nFor faster access to Support, try live chat or talk to us by signing in to the Amazon Flex app and going to the Main Menu > Help > Contact us.\n\nThe Amazon Flex Support.","amazon_flex_support_chat_transcript","Copy SLS Code"],["tr_open_doing_great",14,"Rapport — Doing Great, Hope You Are Too","emerald","I am doing great, Thank you for asking.\nI hope you're doing well too.","Thanks for explaining the issue in detail! ","Thanks Detail"],["tr_apol_same_way",14,"Empathy — Would Have Felt Same Way","emerald","I would have felt the same way if this had to happen to me. I’m afraid I can’t erase what has already taken place, however please don't worry i'll help you with [Problem] right away","I am equally disappointed on my end as I can completely understand [Problem]","Equally Disappointed"],["tr_apol_unhappy_valuable",14,"Empathy — Valuable DP / Help Right Away","emerald","I feel very unhappy about this happening to a valuable Amazon Flex delivery partner like you. I’d like to help you right away and change the way you feel about our services.","I'm so sorry you experienced that. We strive to provide a much better experience than what you've had today.","Strive Better"],["tr_apol_sincere",14,"Apology — Sincere / Delay Apologies","amber","Firstly, please accept my sincere apologies for any inconvenience caused by this situation.","Sorry for the delay, it took longer than expected.","Delay Apology"],["tr_wait_persistent",14,"Hold — Persistent Issue / Taking Longer","amber","Sorry you ran into such a persistent issue. I'm looking into this right now and will get back to you shortly.","I am sorry this is taking longer than usual, would you mind waiting a couple of minutes while I explain the situation?","Taking Longer"],["tr_wait_stay_connected",14,"Hold — Stay Connected / Process This","sky","Please stay connected so that i can help you in the best way possible.","Please hold on while i process this for you.","Hold Process"],["tr_help_ownership",14,"Assurance — Ownership & Prevent Loss","emerald","Please be assured that we are here to make things easier for you and we'll take every action to prevent you from bearing any loss.","Trust me if there was any option with me, I would have taken the ownership and helped you right away.","Would Take Ownership"],["tr_probe_prev_contact",15,"Probe — Look Up Previous Contact","sky","Thanks for explaining the issue in detail! I'd like to look up the previous contact you reached out to us with. Could you let me know when you contacted us last?","I need just a little more info before I can look into this for you, and then we'll get it sorted.","Little More Info"],["tr_probe_rephrase_restated",15,"Probe — Check I Have This Right","sky","Let me check that I have this right. You need help with the [restated problem], correct?","just to confirm are you referring to","Confirm Referring"],["tr_help_serious",15,"Help — Monitor Service / Instructed Solution","amber","We continuously monitor the service provided and take complaints of this nature very seriously.\nThanks for reaching out! I'll need to submit a form to the right team to help you out. Would you mind waiting a couple of minutes while I explain the situation?","Moreover, To ensure a quick resolution, I've personally contacted and forwarded your utter dissatisfaction. I've also instructed them to [Solution]","Instructed [Solution]"],["tr_close_honor",15,"Rapport — Honor & Privilege to Assist","emerald","Please don't thank me. it is my honor to be able to assist a loyal Amazon Flex delivery partner like you.","It is our privilege to have a valuable Amazon Flex delivery partner like you & we want to make sure you are always taken care of.","Our Privilege"],["tr_close_priority",15,"Rapport — Priority & Put a Smile","emerald","Thank you for bringing this to our attention. Your experience is our priority and is super important to us.","I hope i managed to put a smile on your face.","Put a Smile"],["tr_close_family",15,"Closing — Take Care & Patience","emerald","Please take care of yourself and your family.","Thank you for your patience and understanding in this matter","Patience & Understanding"],["tr_close_pleasure_else",15,"Closing — Pleasure Assisting / Signing Up","sky","Its my pleasure assisting valuable Amazon Flex delivery partner like you, Is there anything else I can help you with?","Thank you for signing up with Amazon Flex.","Thanks Signing Up"]]};
+    const APP_DATA = {
+      standings: RAW_DATA.standings,
+      greetings_by_agent: RAW_DATA.greetings_by_agent,
+      quick_refs: RAW_DATA.quick_refs,
+      items: RAW_DATA.rows.map(r => ({
+        id: r[0],
+        status: RAW_DATA.cats[r[1]][0],
+        category: RAW_DATA.cats[r[1]][1],
+        category_display: RAW_DATA.cats[r[1]][2],
+        result_display: r[2],
+        tone: r[3],
+        script: r[4],
+        alt_script: r[5] || '',
+        alt_label: r[6] || '',
+        river_url: r[7] || ''
+      }))
+    };
+
+    const state = {
+      statusFilter: "ALL",          // ALL, Flow, Appeals, RegionApp, Transfers, Transcript
+      searchQuery: "",
+      density: "fhd",               // fhd, comfortable
+      theme: "dark",                // dark, light, sepia
+      activeAgent: "Afroz",
+      nameToken: "",
+      dateToken: "",
+      issueToken: "",
+      copiedCount: 0,
+      inspectedItemId: null
+    };
+
+    function formatStandardDate(dateObj) {
+      return dateObj.toLocaleDateString("en-US", {
+        month: "long",
+        day: "numeric",
+        year: "numeric"
+      });
+    }
+
+    function loadSavedState() {
+      try {
+        const saved = JSON.parse(localStorage.getItem("sds_flex_chats_v1_prefs") || "{}");
+        if (saved.density) state.density = saved.density;
+        if (saved.theme) state.theme = saved.theme;
+        if (saved.activeAgent) state.activeAgent = saved.activeAgent;
+        if (saved.copiedCount) state.copiedCount = Number(saved.copiedCount) || 0;
+      } catch (e) {}
+    }
+
+    function savePrefs() {
+      try {
+        localStorage.setItem("sds_flex_chats_v1_prefs", JSON.stringify({
+          density: state.density,
+          theme: state.theme,
+          activeAgent: state.activeAgent,
+          copiedCount: state.copiedCount
+        }));
+      } catch (e) {}
+    }
+
+    function applyDynamicTokens(rawText, item) {
+      if (!rawText) return "";
+      let t = String(rawText);
+
+      // If this is the default Afroz greeting and user selected another preset agent or typed an agent name
+      if (item && item.id === "chat_greet_afroz" && state.activeAgent) {
+        if (APP_DATA.greetings_by_agent[state.activeAgent]) {
+          t = APP_DATA.greetings_by_agent[state.activeAgent];
+        }
+      }
+
+      // Replace [NAME] with DP/Customer Name if provided
+      const nm = state.nameToken.trim();
+      if (nm) {
+        t = t.replace(/\[NAME\]/gi, nm);
+      }
+
+      // Replace [DATE], [DATE/TIME], [MM/DD/YYY], March 1, 2026, March 15, 2026
+      const dt = state.dateToken.trim();
+      if (dt) {
+        t = t.replace(/\[DATE\/TIME\]/gi, dt)
+             .replace(/\[DATE\]/gi, dt)
+             .replace(/\[MM\/DD\/YYY\]/gi, dt)
+             .replace(/March 1, 2026/gi, dt)
+             .replace(/March 15, 2026/gi, dt);
+      }
+
+      // Replace [do this], [Problem], [Solution], [ISSUE], [summary of issue], [current status], [rephrase...], [restated problem]
+      const iss = state.issueToken.trim();
+      if (iss) {
+        t = t.replace(/\[do this\]/gi, iss)
+             .replace(/\[Problem\]/gi, iss)
+             .replace(/\[Solution\]/gi, iss)
+             .replace(/\[ISSUE\]/gi, iss)
+             .replace(/\[summary of issue\]/gi, iss)
+             .replace(/\[current status\]/gi, iss)
+             .replace(/\[rephrase the customer's question\]/gi, iss)
+             .replace(/\[restated problem\]/gi, iss);
+      }
+
+      return t;
+    }
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function refreshOpenInspector() {
+      if (state.inspectedItemId && !document.getElementById("inspectorModal").classList.contains("hidden")) {
+        const item = APP_DATA.items.find(x => x.id === state.inspectedItemId);
+        if (item) {
+          document.getElementById("inspPrimaryTextarea").value = applyDynamicTokens(item.script, item);
+          const altRaw = item.alt_script === "SEND_STANDINGS"
+            ? Object.values(APP_DATA.standings).join("\n")
+            : (item.alt_script || item.river_url || "");
+          document.getElementById("inspAltTextarea").value = applyDynamicTokens(altRaw, item) || "(No secondary variant for this item)";
+        }
+      }
+    }
+
+    function copyTextToClipboard(text, title, subtitle, flashEl) {
+      if (!text) return;
+      const doSuccess = () => {
+        state.copiedCount += 1;
+        document.getElementById("copyCounter").textContent = String(state.copiedCount);
+        savePrefs();
+        if (flashEl) {
+          const origHtml = flashEl.innerHTML;
+          flashEl.classList.add("copied-flash");
+          flashEl.innerHTML = "<span>✓ Copied</span>";
+          setTimeout(() => {
+            flashEl.classList.remove("copied-flash");
+            flashEl.innerHTML = origHtml;
+          }, 650);
+        }
+        showToast(title, subtitle);
+      };
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(doSuccess).catch(() => {
+          fallbackCopy(text, doSuccess);
+        });
+      } else {
+        fallbackCopy(text, doSuccess);
+      }
+    }
+
+    function fallbackCopy(text, callback) {
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.focus();
+      ta.select();
+      try {
+        document.execCommand("copy");
+        if (callback) callback();
+      } catch (e) {}
+      document.body.removeChild(ta);
+    }
+
+    let toastTimer = null;
+    function showToast(title, subtitle) {
+      const toast = document.getElementById("copyToast");
+      document.getElementById("toastTitle").textContent = title;
+      document.getElementById("toastSubtitle").textContent = subtitle;
+      toast.classList.remove("translate-y-20", "opacity-0");
+      if (toastTimer) clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.add("translate-y-20", "opacity-0");
+      }, 2100);
+    }
+
+    function getToneDotClass(tone) {
+      if (tone === "emerald") return "bg-emerald-400";
+      if (tone === "rose") return "bg-rose-400";
+      if (tone === "amber") return "bg-amber-400";
+      return "bg-sky-400";
+    }
+
+    function getStatusBadgeHtml(status) {
+      const map = {
+        Flow: { label: "Flow", cls: "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border-emerald-500/30" },
+        Appeals: { label: "Appeals", cls: "bg-sky-500/15 text-sky-600 dark:text-sky-400 border-sky-500/30" },
+        RegionApp: { label: "Policy/App", cls: "bg-amber-500/15 text-amber-600 dark:text-amber-400 border-amber-500/30" },
+        Transfers: { label: "Transfers", cls: "bg-rose-500/15 text-rose-600 dark:text-rose-400 border-rose-500/30" },
+        Transcript: { label: "Transcript", cls: "bg-violet-500/15 text-violet-600 dark:text-violet-300 border-violet-500/30" }
+      };
+      const entry = map[status] || map.Flow;
+      return `<span class="px-1.5 py-0.2 rounded text-[9px] font-mono uppercase border ${entry.cls}">${escapeHtml(entry.label)}</span>`;
+    }
+
+    function renderCategoryCard(title, items) {
+      if (!items || !items.length) return "";
+      const first = items[0];
+      const badgeHtml = getStatusBadgeHtml(first.status);
+
+      const rowsHtml = items.map(item => {
+        const dotCls = getToneDotClass(item.tone);
+        const hasAlt = Boolean((item.alt_script && item.alt_script.trim()) || item.river_url);
+        let rightActionHtml = "";
+
+        if (item.alt_script === "SEND_STANDINGS") {
+          rightActionHtml = `
+            <button type="button" data-action="copy-standings" data-id="${item.id}" class="cell-btn cell-standings px-1.5 py-0.5 text-[10px] font-semibold text-amber-700 dark:text-amber-300 flex items-center justify-center gap-0.5 w-[74px] shrink-0" title="Select & copy standing script">
+              <span>⚡ Standings</span>
+            </button>
+          `;
+        } else if (item.river_url && !item.alt_script) {
+          rightActionHtml = `
+            <a href="${escapeHtml(item.river_url)}" target="_blank" rel="noopener noreferrer" class="cell-btn cell-standings px-1.5 py-0.5 text-[10px] font-semibold text-amber-700 dark:text-amber-300 flex items-center justify-center gap-0.5 w-[74px] shrink-0" title="Open HYD20 RIVER Workflow in new tab">
+              <span>🔗 RIVER ↗</span>
+            </a>
+          `;
+        } else if (hasAlt) {
+          const altLabel = item.alt_label || "Alt";
+          rightActionHtml = `
+            <button type="button" data-action="copy-alt" data-id="${item.id}" class="cell-btn cell-blurb px-1.5 py-0.5 text-[10px] font-semibold text-emerald-700 dark:text-emerald-300 flex items-center justify-center gap-0.5 w-[74px] shrink-0 truncate" title="Copy Alternate: ${escapeHtml(item.alt_script)}">
+              <span class="truncate">⚡ ${escapeHtml(altLabel)}</span>
+            </button>
+          `;
+        } else {
+          rightActionHtml = `
+            <button type="button" data-action="inspect" data-id="${item.id}" class="cell-btn cell-both px-1.5 py-0.5 text-[9.5px] font-medium text-slate-500 dark:text-slate-400 flex items-center justify-center w-[74px] shrink-0" title="Inspect or edit script before copying">
+              <span>🔍 View</span>
+            </button>
+          `;
+        }
+
+        const previewTip = applyDynamicTokens(item.script, item);
+
+        return `
+          <div class="scenario-row flex items-stretch justify-between">
+            <button type="button" data-action="inspect" data-id="${item.id}" class="flex-1 px-2 py-0.5 text-left flex items-center justify-between gap-1 min-w-0 hover:text-blue-500 dark:hover:text-blue-400 transition-colors" title="${escapeHtml(previewTip)}">
+              <span class="flex items-center gap-1.5 min-w-0">
+                <span class="w-1.5 h-1.5 rounded-full shrink-0 ${dotCls}"></span>
+                <span class="truncate font-medium">${escapeHtml(item.result_display)}</span>
+              </span>
+              <span class="text-[9.5px] opacity-35 hover:opacity-100 shrink-0">🔍</span>
+            </button>
+
+            <button type="button" data-action="copy-primary" data-id="${item.id}" class="cell-btn cell-ann px-1.5 py-0.5 text-[10.5px] font-semibold text-blue-700 dark:text-blue-300 flex items-center justify-center gap-0.5 w-[68px] shrink-0" title="Click to copy: ${escapeHtml(previewTip)}">
+              <span>💬 Copy</span>
+            </button>
+
+            ${rightActionHtml}
+          </div>
+        `;
+      }).join("");
+
+      return `
+        <div class="cat-card shadow-2xs">
+          <div class="cat-header flex items-center justify-between gap-1">
+            <span class="font-bold tracking-tight truncate">${escapeHtml(title)}</span>
+            <div class="flex items-center gap-1 shrink-0">
+              ${badgeHtml}
+            </div>
+          </div>
+          <div class="col-subhead flex items-center justify-between px-2 py-0.5">
+            <span class="flex-1">Chat Particular / Use Case</span>
+            <span class="w-[68px] text-center">Script</span>
+            <span class="w-[74px] text-center">Alt / Link</span>
+          </div>
+          <div>
+            ${rowsHtml}
+          </div>
+        </div>
+      `;
+    }
+
+    function renderQuickRefsCard() {
+      const refs = APP_DATA.quick_refs || [];
+      const rowsHtml = refs.map(r => {
+        if (r.type === "link") {
+          return `
+            <div class="scenario-row flex items-stretch justify-between">
+              <div class="flex-1 px-2 py-1 min-w-0 flex flex-col justify-center" title="${escapeHtml(r.note)}">
+                <div class="flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0"></span>
+                  <span class="font-medium truncate text-[11px]">${escapeHtml(r.label)}</span>
+                </div>
+              </div>
+              <button type="button" data-action="copy-qref" data-val="${escapeHtml(r.value)}" data-label="${escapeHtml(r.label)}" class="cell-btn cell-ann px-1.5 py-0.5 text-[10px] font-semibold text-blue-700 dark:text-blue-300 flex items-center justify-center w-[68px] shrink-0" title="Copy RIVER URL">
+                <span>📋 URL</span>
+              </button>
+              <a href="${escapeHtml(r.value)}" target="_blank" rel="noopener noreferrer" class="cell-btn cell-standings px-1.5 py-0.5 text-[10px] font-semibold text-amber-700 dark:text-amber-300 flex items-center justify-center w-[74px] shrink-0" title="Open HYD20 RIVER Workflow">
+                <span>🔗 Open ↗</span>
+              </a>
+            </div>
+          `;
+        }
+        return `
+          <div class="scenario-row flex items-stretch justify-between">
+            <div class="flex-1 px-2 py-0.5 min-w-0 flex flex-col justify-center" title="${escapeHtml(r.note)}">
+              <div class="flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-slate-400 shrink-0"></span>
+                <span class="font-medium truncate text-[11px]">${escapeHtml(r.label)}</span>
+              </div>
+              <div class="text-[9.5px] font-mono text-slate-400 truncate pl-3">${escapeHtml(r.value)}</div>
+            </div>
+            <button type="button" data-action="copy-qref" data-val="${escapeHtml(r.value)}" data-label="${escapeHtml(r.label)}" class="cell-btn cell-both px-2 py-0.5 text-[10px] font-semibold text-slate-700 dark:text-slate-300 flex items-center justify-center gap-1 w-[74px] shrink-0" title="Copy ${escapeHtml(r.value)}">
+              <span>📋 Copy</span>
+            </button>
+          </div>
+        `;
+      }).join("");
+
+      return `
+        <div class="cat-card shadow-2xs">
+          <div class="cat-header flex items-center justify-between gap-2">
+            <span class="font-bold tracking-tight truncate">17. RIVER Workflows, Queues &amp; SLS</span>
+            <span class="px-1.5 py-0.2 rounded text-[9px] font-mono uppercase bg-slate-200/80 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-300 dark:border-slate-700">Links</span>
+          </div>
+          <div class="col-subhead flex items-center justify-between px-2 py-0.5">
+            <span class="flex-1">Queue / Workflow / SLS Template</span>
+            <span class="w-[74px] text-center">Action</span>
+          </div>
+          <div>
+            ${rowsHtml}
+          </div>
+        </div>
+      `;
+    }
+
+    function getVisibleItems() {
+      const q = state.searchQuery.trim().toLowerCase();
+      return APP_DATA.items.filter(item => {
+        if (state.statusFilter !== "ALL" && item.status !== state.statusFilter) {
+          return false;
+        }
+        if (!q) return true;
+        const hay = [
+          item.status,
+          item.category,
+          item.category_display,
+          item.result_display,
+          item.script,
+          item.alt_script || "",
+          item.alt_label || ""
+        ].join(" ").toLowerCase();
+        return hay.includes(q);
+      });
+    }
+
+    function renderLaneHeader(title) {
+      return `
+        <div class="px-1.5 py-1 text-[10px] font-mono font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 border-b border-slate-300 dark:border-slate-800 flex items-center justify-between">
+          <span class="truncate">${escapeHtml(title)}</span>
+        </div>
+      `;
+    }
+
+    function renderMatrix() {
+      const visible = getVisibleItems();
+      const container = document.getElementById("matrixContainer");
+
+      if (!visible.length) {
+        container.className = "p-8 text-center";
+        container.innerHTML = `
+          <div class="max-w-md mx-auto p-6 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-slate-800/50">
+            <div class="text-sm font-bold mb-1">No matching chat scripts found</div>
+            <p class="text-xs text-slate-400 mb-3">Try clearing your search filter or switching tabs.</p>
+            <button type="button" id="emptyResetBtn" class="px-3 py-1.5 rounded-lg bg-blue-600 text-white text-xs font-semibold">Reset Filters</button>
+          </div>
+        `;
+        const resetBtn = document.getElementById("emptyResetBtn");
+        if (resetBtn) {
+          resetBtn.addEventListener("click", () => {
+            state.searchQuery = "";
+            state.statusFilter = "ALL";
+            document.getElementById("searchInput").value = "";
+            syncStatusTabsUI();
+            renderMatrix();
+          });
+        }
+        return;
+      }
+
+      const byCat = {};
+      visible.forEach(item => {
+        if (!byCat[item.category]) byCat[item.category] = [];
+        byCat[item.category].push(item);
+      });
+
+      // Filtered Tab or Search View
+      if (state.statusFilter !== "ALL" || state.searchQuery.trim()) {
+        container.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3.5 items-start";
+        const cards = Object.keys(byCat).map(catKey => {
+          const list = byCat[catKey];
+          return renderCategoryCard(list[0].category_display, list);
+        });
+        if (state.statusFilter === "Transfers" && !state.searchQuery.trim()) {
+          cards.push(renderQuickRefsCard());
+        }
+        container.innerHTML = cards.join("");
+        return;
+      }
+
+      // DEFAULT 1-PAGE 24" FULL HD (1920x1080) THINKCENTRE 6-COLUMN BENTO MATRIX
+      container.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-2.5 items-start";
+      container.innerHTML = [
+        // Col 1: Greetings (6) + More Info (5) + Wait & Hold (5) = 16 rows
+        `<div class="space-y-2">
+          ${renderLaneHeader("Col 1 • Flow: Greet, Probe & Hold")}
+          ${renderCategoryCard("1. Greetings & Opening", byCat["Greetings"])}
+          ${renderCategoryCard("2. More Info & Probing", byCat["More Info"])}
+          ${renderCategoryCard("3. Wait, Hold & Parked Chats", byCat["Wait & Hold"])}
+        </div>`,
+
+        // Col 2: Idle & Park (5) + End & Closing (6) + Warnings (2) = 13 rows
+        `<div class="space-y-2">
+          ${renderLaneHeader("Col 2 • Flow: Idle, Close & Warn")}
+          ${renderCategoryCard("4. Idle Timer & Park Scripts", byCat["Idle & Park"])}
+          ${renderCategoryCard("5. End Chat & Closings", byCat["End & Closing"])}
+          ${renderCategoryCard("6. Abusive & Chat Warnings", byCat["Warnings"])}
+        </div>`,
+
+        // Col 3: Actions & LHE (6) + Repeat Denied (3) + Offers (5) = 14 rows
+        `<div class="space-y-2">
+          ${renderLaneHeader("Col 3 • Appeals: LHE & Offers")}
+          ${renderCategoryCard("7. Actions & LHE Exemptions", byCat["Actions & LHE"])}
+          ${renderCategoryCard("8. Repeat Denied Responses", byCat["Repeat Denied"])}
+          ${renderCategoryCard("9. Offers & Account Standing", byCat["Offers"])}
+        </div>`,
+
+        // Col 4: Cancel Block (3) + Region Change (5) + BGC, Waitlist & App (6) = 14 rows
+        `<div class="space-y-2">
+          ${renderLaneHeader("Col 4 • Policy: Cancel, Region & App")}
+          ${renderCategoryCard("10. Cancel Block Guidelines", byCat["Cancel Block"])}
+          ${renderCategoryCard("11. Region Change & Close Account", byCat["Region Change"])}
+          ${renderCategoryCard("12. BGC, Waitlist & App Issues", byCat["BGC, Waitlist & App"])}
+        </div>`,
+
+        // Col 5: Transfers (9) + Follow-Up Emails (3) + RIVER & Queues (7)
+        `<div class="space-y-2">
+          ${renderLaneHeader("Col 5 • Transfers, Emails & RIVER")}
+          ${renderCategoryCard("13. Transfers & Specialist Queues", byCat["Transfers"])}
+          ${renderCategoryCard("14. Disconnected & Transcript Emails", byCat["Follow-Up Emails"])}
+          ${renderQuickRefsCard()}
+        </div>`,
+
+        // Col 6: Chat Transcript Pro (Empathy & Rapport Closings) (14 rows)
+        `<div class="space-y-2">
+          ${renderLaneHeader("Col 6 • Chat Transcript Pro")}
+          ${renderCategoryCard("15. Transcript Pro • Empathy & Hold", byCat["Transcript Empathy"])}
+          ${renderCategoryCard("16. Transcript Pro • Probe & Rapport", byCat["Transcript Probing & Closing"])}
+        </div>`
+      ].join("");
+    }
+
+    function openInspector(itemId) {
+      const item = APP_DATA.items.find(x => x.id === itemId);
+      if (!item) return;
+      state.inspectedItemId = itemId;
+
+      const badge = document.getElementById("inspStatusBadge");
+      badge.textContent = item.status;
+      const statusColorMap = {
+        Flow: "bg-emerald-500/20 text-emerald-500 dark:text-emerald-300 border-emerald-500/30",
+        Appeals: "bg-sky-500/20 text-sky-500 dark:text-sky-300 border-sky-500/30",
+        RegionApp: "bg-amber-500/20 text-amber-500 dark:text-amber-300 border-amber-500/30",
+        Transfers: "bg-rose-500/20 text-rose-500 dark:text-rose-300 border-rose-500/30",
+        Transcript: "bg-violet-500/20 text-violet-500 dark:text-violet-300 border-violet-500/30"
+      };
+      badge.className = `px-2 py-0.5 rounded text-xs font-bold uppercase border ${statusColorMap[item.status] || statusColorMap.Flow}`;
+
+      document.getElementById("inspTitle").textContent = `${item.category_display} → ${item.result_display}`;
+      document.getElementById("inspPrimaryTextarea").value = applyDynamicTokens(item.script, item);
+
+      const altRaw = item.alt_script === "SEND_STANDINGS"
+        ? Object.values(APP_DATA.standings).join("\n")
+        : (item.alt_script || item.river_url || "");
+      document.getElementById("inspAltTextarea").value = applyDynamicTokens(altRaw, item) || "(No secondary variant for this item)";
+
+      document.getElementById("inspectorModal").classList.remove("hidden");
+    }
+
+    function syncStatusTabsUI() {
+      document.querySelectorAll(".status-tab").forEach(btn => {
+        const st = btn.getAttribute("data-status");
+        if (st === state.statusFilter) {
+          btn.className = "status-tab px-2.5 py-1 rounded-md text-[11px] font-semibold transition-all bg-blue-600 text-white shadow-xs flex items-center gap-1.5";
+        } else {
+          btn.className = "status-tab px-2.5 py-1 rounded-md text-[11px] font-medium transition-all hover:text-blue-400 flex items-center gap-1.5 text-slate-700 dark:text-slate-300";
+        }
+      });
+    }
+
+    function syncAgentPresetsUI() {
+      document.querySelectorAll(".agent-preset-btn").forEach(btn => {
+        const ag = btn.getAttribute("data-agent");
+        if (ag === state.activeAgent) {
+          btn.className = "agent-preset-btn px-1.5 py-0.2 rounded text-[9px] font-semibold bg-blue-600 text-white border border-blue-500";
+        } else {
+          btn.className = "agent-preset-btn px-1.5 py-0.2 rounded text-[9px] font-semibold bg-slate-200 dark:bg-slate-700/80 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-600 hover:border-blue-400";
+        }
+      });
+    }
+
+    function applyThemeUI() {
+      const root = document.documentElement;
+      root.classList.remove("dark", "sepia-mode");
+      if (state.theme === "dark") {
+        root.classList.add("dark");
+      } else if (state.theme === "sepia") {
+        root.classList.add("dark", "sepia-mode");
+      }
+      document.querySelectorAll(".theme-btn").forEach(btn => {
+        const t = btn.getAttribute("data-theme");
+        if (t === state.theme) {
+          btn.className = "theme-btn px-2 py-0.5 rounded text-[11px] font-semibold bg-blue-600 text-white";
+        } else {
+          btn.className = "theme-btn px-2 py-0.5 rounded text-[11px] font-medium hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300";
+        }
+      });
+    }
+
+    function applyDensityUI() {
+      document.body.classList.remove("density-fhd", "density-comfortable");
+      if (state.density === "comfortable") {
+        document.body.classList.add("density-comfortable");
+        document.getElementById("densityBtn").textContent = "🖥️ Comfortable";
+      } else {
+        document.body.classList.add("density-fhd");
+        document.getElementById("densityBtn").textContent = "🖥️ 1-Page FHD";
+      }
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      loadSavedState();
+
+      document.getElementById("copyCounter").textContent = String(state.copiedCount);
+
+      applyThemeUI();
+      applyDensityUI();
+      syncStatusTabsUI();
+      syncAgentPresetsUI();
+      renderMatrix();
+
+      document.querySelectorAll("[data-contact='chime']").forEach(el => {
+        el.addEventListener("click", () => {
+          copyTextToClipboard("@tafrokha", "Copied Chime Handle: @tafrokha", "Opening Amazon Chime...", null);
+        });
+      });
+
+      document.getElementById("statusTabs").addEventListener("click", e => {
+        const btn = e.target.closest(".status-tab");
+        if (!btn) return;
+        state.statusFilter = btn.getAttribute("data-status");
+        syncStatusTabsUI();
+        renderMatrix();
+      });
+
+      // Quick-fire 1-click strip in Bar 1.1
+      document.querySelectorAll(".quick-fire-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const id = btn.getAttribute("data-quick-id");
+          const item = APP_DATA.items.find(x => x.id === id);
+          if (!item) return;
+          const text = applyDynamicTokens(item.script, item);
+          copyTextToClipboard(text, `Copied: ${item.result_display}`, text, btn);
+        });
+      });
+
+      // Agent preset selector buttons
+      document.querySelectorAll(".agent-preset-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const ag = btn.getAttribute("data-agent");
+          state.activeAgent = ag;
+          savePrefs();
+          syncAgentPresetsUI();
+          refreshOpenInspector();
+          const greetText = APP_DATA.greetings_by_agent[ag];
+          copyTextToClipboard(greetText, `Agent Set & Greeting Copied (${ag})!`, greetText, null);
+        });
+      });
+
+      const searchInput = document.getElementById("searchInput");
+      const clearSearchBtn = document.getElementById("clearSearchBtn");
+      searchInput.addEventListener("input", e => {
+        state.searchQuery = e.target.value;
+        clearSearchBtn.classList.toggle("hidden", !state.searchQuery);
+        renderMatrix();
+      });
+      clearSearchBtn.addEventListener("click", () => {
+        state.searchQuery = "";
+        searchInput.value = "";
+        clearSearchBtn.classList.add("hidden");
+        renderMatrix();
+      });
+
+      window.addEventListener("keydown", e => {
+        if (e.key === "/" && document.activeElement.tagName !== "INPUT" && document.activeElement.tagName !== "TEXTAREA") {
+          e.preventDefault();
+          searchInput.focus();
+        } else if (e.key === "Escape") {
+          document.getElementById("inspectorModal").classList.add("hidden");
+          document.getElementById("standingsPopover").classList.add("hidden");
+        }
+      });
+
+      document.getElementById("densityBtn").addEventListener("click", () => {
+        state.density = state.density === "fhd" ? "comfortable" : "fhd";
+        savePrefs();
+        applyDensityUI();
+      });
+
+      document.getElementById("copyHtmlSourceBtn").addEventListener("click", e => {
+        const fullHtml = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+        copyTextToClipboard(fullHtml, "Copied Complete HTML Code!", "Paste into a .html file and save", e.currentTarget);
+      });
+
+      document.querySelectorAll(".theme-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          state.theme = btn.getAttribute("data-theme");
+          savePrefs();
+          applyThemeUI();
+        });
+      });
+
+      document.querySelectorAll(".standing-copy-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const st = btn.getAttribute("data-standing");
+          const text = APP_DATA.standings[st];
+          copyTextToClipboard(text, `Copied ${st} Standing Chat Script!`, text, btn);
+        });
+      });
+
+      const nameInput = document.getElementById("tokenNameInput");
+      const dateInput = document.getElementById("tokenDateInput");
+      const issueInput = document.getElementById("tokenIssueInput");
+      const nativeDatePicker = document.getElementById("nativeDatePicker");
+      const openDatePickerBtn = document.getElementById("openDatePickerBtn");
+
+      openDatePickerBtn.addEventListener("click", () => {
+        if (typeof nativeDatePicker.showPicker === "function") {
+          nativeDatePicker.showPicker();
+        } else {
+          nativeDatePicker.focus();
+        }
+      });
+
+      nameInput.addEventListener("input", e => {
+        state.nameToken = e.target.value;
+        refreshOpenInspector();
+      });
+      dateInput.addEventListener("input", e => {
+        state.dateToken = e.target.value;
+        refreshOpenInspector();
+      });
+      issueInput.addEventListener("input", e => {
+        state.issueToken = e.target.value;
+        refreshOpenInspector();
+      });
+
+      document.getElementById("fillTodayBtn").addEventListener("click", () => {
+        const formatted = formatStandardDate(new Date());
+        state.dateToken = formatted;
+        dateInput.value = formatted;
+        refreshOpenInspector();
+        showToast("Date Set to Today", formatted);
+      });
+
+      document.getElementById("fillYesterdayBtn").addEventListener("click", () => {
+        const d = new Date();
+        d.setDate(d.getDate() - 1);
+        const formatted = formatStandardDate(d);
+        state.dateToken = formatted;
+        dateInput.value = formatted;
+        refreshOpenInspector();
+        showToast("Date Set to Yesterday", formatted);
+      });
+
+      document.getElementById("copyDateOnlyBtn").addEventListener("click", e => {
+        if (!state.dateToken.trim()) {
+          const formatted = formatStandardDate(new Date());
+          state.dateToken = formatted;
+          dateInput.value = formatted;
+          refreshOpenInspector();
+        }
+        copyTextToClipboard(state.dateToken, "Copied Standard Date!", state.dateToken, e.currentTarget);
+      });
+
+      nativeDatePicker.addEventListener("change", e => {
+        if (!e.target.value) return;
+        const parts = e.target.value.split("-");
+        if (parts.length === 3) {
+          const picked = new Date(Number(parts[0]), Number(parts[1]) - 1, Number(parts[2]));
+          const formatted = formatStandardDate(picked);
+          state.dateToken = formatted;
+          dateInput.value = formatted;
+          refreshOpenInspector();
+          showToast("Date Selected", formatted);
+        }
+      });
+
+      document.getElementById("clearTokensBtn").addEventListener("click", () => {
+        state.nameToken = "";
+        state.dateToken = "";
+        state.issueToken = "";
+        nameInput.value = "";
+        dateInput.value = "";
+        issueInput.value = "";
+        nativeDatePicker.value = "";
+        refreshOpenInspector();
+        showToast("Auto-Fill Cleared", "Name, Date, and Issue/Problem tokens reset");
+      });
+
+      let activeStandingsTriggerEl = null;
+      document.getElementById("matrixContainer").addEventListener("click", e => {
+        const btn = e.target.closest("[data-action]");
+        if (!btn) return;
+        const action = btn.getAttribute("data-action");
+
+        if (action === "copy-qref") {
+          const val = btn.getAttribute("data-val");
+          const label = btn.getAttribute("data-label");
+          copyTextToClipboard(val, `Copied: ${label}`, val, btn);
+          return;
+        }
+
+        const id = btn.getAttribute("data-id");
+        const item = APP_DATA.items.find(x => x.id === id);
+        if (!item) return;
+
+        if (action === "copy-primary") {
+          const text = applyDynamicTokens(item.script, item);
+          copyTextToClipboard(
+            text,
+            `Copied Chat Script: ${item.result_display}`,
+            text,
+            btn
+          );
+        } else if (action === "copy-alt") {
+          const text = applyDynamicTokens(item.alt_script, item);
+          copyTextToClipboard(
+            text,
+            `Copied Alternate: ${item.result_display}`,
+            text,
+            btn
+          );
+        } else if (action === "copy-standings") {
+          activeStandingsTriggerEl = btn;
+          const rect = btn.getBoundingClientRect();
+          const pop = document.getElementById("standingsPopover");
+          pop.classList.remove("hidden");
+          const topPos = Math.min(window.innerHeight - 130, rect.bottom + 6);
+          const leftPos = Math.max(12, Math.min(window.innerWidth - 270, rect.left - 160));
+          pop.style.top = topPos + "px";
+          pop.style.left = leftPos + "px";
+        } else if (action === "inspect") {
+          openInspector(id);
+        }
+      });
+
+      document.querySelectorAll(".pop-standing-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const st = btn.getAttribute("data-pop-standing");
+          const text = APP_DATA.standings[st];
+          document.getElementById("standingsPopover").classList.add("hidden");
+          copyTextToClipboard(text, `Copied ${st} Standing Chat Script!`, text, activeStandingsTriggerEl);
+        });
+      });
+      document.getElementById("closePopoverBtn").addEventListener("click", () => {
+        document.getElementById("standingsPopover").classList.add("hidden");
+      });
+
+      document.getElementById("closeInspectorBtn").addEventListener("click", () => {
+        document.getElementById("inspectorModal").classList.add("hidden");
+      });
+      document.getElementById("inspCopyPrimaryBtn").addEventListener("click", e => {
+        const text = document.getElementById("inspPrimaryTextarea").value;
+        copyTextToClipboard(text, "Copied Primary Script!", "From Live Inspector", e.currentTarget);
+      });
+      document.getElementById("inspCopyAltBtn").addEventListener("click", e => {
+        const text = document.getElementById("inspAltTextarea").value;
+        copyTextToClipboard(text, "Copied Alternate Script!", "From Live Inspector", e.currentTarget);
+      });
+      document.getElementById("inspCopyBothBtn").addEventListener("click", e => {
+        const p = document.getElementById("inspPrimaryTextarea").value;
+        const a = document.getElementById("inspAltTextarea").value;
+        const combined = p + "\n\n" + a;
+        copyTextToClipboard(combined, "Copied Both Scripts!", "Combined clipboard copy", e.currentTarget);
+      });
+    });
+  </script>
+</body>
+</html>
